@@ -1,9 +1,12 @@
 .header {
   display: flex;
+  position: sticky;
   justify-content: space-between;
   align-items: center;
   padding: 1rem 8rem;
   border-bottom: 2px solid #e5e7eb;
+  z-index: 10;
+  background-color: #ffffff;
 
   @media (max-width: 1440px) {
     padding: 1rem 6rem;
