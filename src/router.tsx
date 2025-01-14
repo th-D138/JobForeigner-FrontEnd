@@ -5,7 +5,7 @@ import {
 } from 'react-router-dom';
 import MainPage from './pages/main/Page';
 import CommunityPage from './pages/community/Page';
-import CorporateInfoPage from './pages/corporateInfo/Page';
+import CompaniesPage from './pages/companies/Page';
 import NotFoundPage from './pages/notFound/Page';
 
 export const router = createBrowserRouter(
@@ -13,7 +13,7 @@ export const router = createBrowserRouter(
     <Route path='/'>
       <Route path='' element={<MainPage />} />
       <Route path='community' element={<CommunityPage />} />
-      <Route path='corporateInfo' element={<CorporateInfoPage />} />
+      <Route path='companies' element={<CompaniesPage />} />
       <Route path='*' element={<NotFoundPage />} />
     </Route>
   )
