@@ -2,7 +2,7 @@
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  padding: 2rem 4rem;
+  padding: 3rem 4rem;
   background-color: #ffffff;
   border-top: 2px solid #e5e7eb;
   width: 100%;
@@ -13,8 +13,16 @@
   gap: 4rem;
   font-size: 1.25rem;
   font-weight: bold;
+
+  @media (max-width: 1280px) {
+    font-size: 1rem;
+  }
 }
 
 .info {
   font-size: 1.125rem;
+
+  @media (max-width: 1280px) {
+    font-size: 0.875rem;
+  }
 }
