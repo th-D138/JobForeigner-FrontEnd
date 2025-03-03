@@ -3,7 +3,7 @@ import { Search, MapPin } from 'lucide-react';
 
 export default function SearchSectionForm() {
   return (
-    <div className={styles.searchBox}>
+    <form className={styles.searchBox}>
       <div className={styles.searchBoxRow}>
         <div className={styles.searchInputWrapper}>
           <Search className={styles.inputIcon} />
@@ -31,6 +31,6 @@ export default function SearchSectionForm() {
           검색
         </button>
       </div>
-    </div>
+    </form>
   );
 }

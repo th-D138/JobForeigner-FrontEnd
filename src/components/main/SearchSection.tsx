@@ -11,9 +11,7 @@ export default function SearchSection() {
             <p className={styles.sectionSubtitle}>
               키워드, 지역, 직종 등으로 맞춤형 채용정보를 검색할 수 있습니다.
             </p>
-            <form>
-              <SearchSectionForm />
-            </form>
+            <SearchSectionForm />
           </div>
         </div>
       </div>
