@@ -2,6 +2,7 @@ import Footer from '@/components/footer/Footer';
 import Header from '../../components/header/Header';
 import styles from './page.module.scss';
 import Banner from '@/components/main/Banner';
+import SearchSection from '@/components/main/SearchSection';
 
 export default function MainPage() {
   return (
@@ -9,6 +10,7 @@ export default function MainPage() {
       <Header />
       <main className={styles.page}>
         <Banner />
+        <SearchSection />
       </main>
       <Footer />
     </div>
