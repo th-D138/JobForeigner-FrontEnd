@@ -18,8 +18,8 @@ export default function SearchSectionForm() {
         </div>
         <div className={styles.searchSelectWrapper}>
           <MapPin className={styles.inputIcon} />
-          <select name="region" className={styles.searchSelect}>
-            <option value="">지역 선택</option>
+          <select name="region" className={styles.searchSelect} required>
+            <option value="all">지역 선택</option>
             <option value="seoul">서울</option>
             <option value="busan">부산</option>
             <option value="incheon">인천</option>
