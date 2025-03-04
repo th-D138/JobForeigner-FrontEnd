@@ -1,0 +1,98 @@
+$transition: 0.2s ease-in-out;
+
+.jobCard {
+  border: 1px solid avr(--color-gray-200);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: box-shadow $transition;
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.jobCardBody {
+  padding: 1.5rem;
+}
+
+.jobCardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.jobLogoWrapper {
+  position: relative;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-gray-100);
+  border-radius: 0.375rem;
+  overflow: hidden;
+}
+
+.jobLogo {
+  object-fit: contain;
+}
+
+.badgeNew {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background-color: #d1fae5; /* bg-green-100 */
+  color: #065f46; /* text-green-800 */
+}
+
+.badgeDefault {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.25rem 0.625rem;
+  border-radius: 9999px;
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-800);
+}
+
+.jobTitle {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-gray-900);
+  /* line-clamp-1 대신 한 줄만 보여주려면 overflow 설정 필요 (CSS line-clamp) */
+}
+
+.companyName {
+  margin-top: 0.25rem;
+  color: var(--color-gray-600);
+}
+
+.locationRow {
+  display: flex;
+  align-items: center;
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+.locationIcon {
+  margin-right: 0.25rem;
+  width: 1rem;
+  height: 1rem;
+}
+
+.tagsWrapper {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--color-gray-100);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.jobTag {
+  font-size: 0.75rem;
+  background-color: var(--color-gray-100);
+  color: var(--color-gray-600);
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+}
