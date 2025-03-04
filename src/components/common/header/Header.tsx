@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import styles from './header.module.scss';
 import { navItems } from '@/lib/constants/navItems';
 import SearchForm from './SearchForm';
@@ -15,7 +15,12 @@ export default function Header() {
         <ul className={styles.nav}>
           {navItems.map(({ id, name, link }) => (
             <li key={id}>
-              <Link to={link}>{name}</Link>
+              <NavLink
+                to={link}
+                className={({ isActive }) => (isActive ? styles.active : '')}
+              >
+                {name}
+              </NavLink>
             </li>
           ))}
         </ul>
