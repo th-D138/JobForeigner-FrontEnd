@@ -26,13 +26,14 @@ $transition: 0.2s ease-in-out;
 }
 
 .categoryName {
+  font-size: 1.125rem;
   font-weight: 500;
   color: var(--color-gray-900);
   margin-bottom: 0.25rem;
 }
 
 .categoryCount {
-  font-size: 0.875rem;
+  font-size: 1rem;
   color: var(--color-gray-600);
 }
 
