@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom';
 import styles from './popularRecruitmentSection.module.scss';
 import { ArrowRight } from 'lucide-react';
-import RecruitmentCategory from './RecruitmentCard';
+import RecruitmentCategory from './RecruitmentCategory';
 
 export interface Props {
   categories: {
@@ -23,12 +23,12 @@ export default function PopularRecruitmentSection({ categories }: Props) {
           </p>
         </div>
         <div className={styles.categoriesGrid}>
-          {categories.map((category, index) => (
-            <RecruitmentCategory key={index} category={category} />
+          {categories.map((category) => (
+            <RecruitmentCategory key={category.id} category={category} />
           ))}
         </div>
         <div className={styles.viewAll}>
-          <Link to="/jobs/categories" className={styles.viewAllLink}>
+          <Link to="/companies" className={styles.viewAllLink}>
             모든 카테고리 보기
             <ArrowRight className={styles.viewAllIcon} />
           </Link>
