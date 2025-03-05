@@ -1,0 +1,43 @@
+$transition: 0.2s ease-in-out;
+
+.categoryCard {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  padding: 1.5rem;
+  text-align: center;
+  transition: box-shadow $transition;
+
+  &:hover {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.categoryIconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3rem;
+  height: 3rem;
+  background-color: var(--color-purple-100);
+  color: var(--color-purple-600);
+  border-radius: 9999px; /* rounded-full */
+  margin-bottom: 1rem;
+}
+
+.categoryName {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: var(--color-gray-900);
+  margin-bottom: 0.25rem;
+}
+
+.categoryCount {
+  font-size: 1rem;
+  color: var(--color-gray-600);
+}
+
+.icon {
+  width: 1.5rem;
+  height: 1.5rem;
+}
