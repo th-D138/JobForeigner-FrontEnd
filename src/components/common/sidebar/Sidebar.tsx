@@ -58,7 +58,6 @@ const navigation = [
     name: '기업 정보',
     icon: <Building2 />,
     items: [
-      { name: '기업 정보 조회', href: '/mypage/company' },
       { name: '기업 정보 수정', href: '/mypage/company/edit' },
       { name: '기업 프로필 관리', href: '/mypage/company/profile' },
     ],
