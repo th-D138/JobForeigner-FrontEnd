@@ -8,6 +8,7 @@ import Layout from './components/layout/Layout';
 
 // 만든 HOC 임포트
 import withSuspense from '@/pages/withSuspense';
+import LayoutWithSidebar from './components/layout/LayoutWithSidebar';
 
 const MainPage = lazy(() => import('./pages/main/Page'));
 const ProfilePage = lazy(() => import('./pages/profile/Page'));
@@ -28,13 +29,16 @@ export const router = createBrowserRouter(
       {/* Layout이 적용되는 라우트들 */}
       <Route path="/" element={<Layout />}>
         <Route index element={<SuspensedMainPage />} />
-        <Route path="profile" element={<SuspensedProfilePage />} />
         <Route path="community" element={<SuspensedCommunityPage />} />
         <Route path="companies" element={<SuspensedCompaniesPage />} />
       </Route>
 
+      <Route path="/" element={<LayoutWithSidebar />}>
+        <Route path="profile" element={<SuspensedProfilePage />} />
+      </Route>
+
       {/* Layout이 적용되지 않는 라우트 */}
       <Route path="*" element={<SuspensedNotFoundPage />} />
-    </>
-  )
+    </>,
+  ),
 );
