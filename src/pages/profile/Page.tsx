@@ -1,6 +1,7 @@
 import { UserProfile, ResumeList } from '@/components/profile';
 
 import styles from './page.module.scss';
+import { ApplicationHistory } from '@/components/profile/ApplicationHistory';
 
 const userInfo = {
   profileImageUrl: 'https://randomuser.me/api',
@@ -34,21 +35,24 @@ const userInfo = {
   applications: [
     {
       id: 1,
-      title: '회사1',
-      createdAt: '2021-08-01',
-      updatedAt: '2021-08-01',
+      company: '토스',
+      position: '프론트엔드 개발자',
+      appliedAt: '2021-08-01',
+      status: '서류 검토중',
     },
     {
       id: 2,
-      title: '회사2',
-      createdAt: '2021-08-01',
-      updatedAt: '2021-08-01',
+      company: '당근마켓',
+      position: '백엔드 개발자',
+      appliedAt: '2021-08-01',
+      status: '면접 예정',
     },
     {
       id: 3,
-      title: '회사3',
-      createdAt: '2021-08-01',
-      updatedAt: '2021-08-01',
+      company: '네이버',
+      position: '디자이너',
+      appliedAt: '2021-08-01',
+      status: '탈락',
     },
   ],
 };
@@ -67,6 +71,7 @@ export default function ProfilePage() {
         </section>
         <section>
           <h2>지원 내역</h2>
+          <ApplicationHistory applications={userInfo.applications} />
         </section>
       </main>
     </div>

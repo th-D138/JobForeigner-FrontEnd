@@ -1,6 +1,14 @@
 import { ProfileImage, ProfileInfo, ProfileBottom } from '../profile';
 import styles from './userProfile.module.scss';
 
+interface Application {
+  id: number;
+  company: string;
+  position: string;
+  appliedAt: string;
+  status: string;
+}
+
 interface Props {
   userInfo: {
     name: string;
@@ -14,12 +22,7 @@ interface Props {
       createdAt: string;
       updatedAt: string;
     }[];
-    applications: {
-      id: number;
-      title: string;
-      createdAt: string;
-      updatedAt: string;
-    }[];
+    applications: Application[];
   };
 }
 

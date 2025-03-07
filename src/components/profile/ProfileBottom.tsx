@@ -1,5 +1,13 @@
 import styles from './profileBottom.module.scss';
 
+interface Application {
+  id: number;
+  company: string;
+  position: string;
+  appliedAt: string;
+  status: string;
+}
+
 interface Props {
   resumes: {
     id: number;
@@ -7,12 +15,7 @@ interface Props {
     createdAt: string;
     updatedAt: string;
   }[];
-  applications: {
-    id: number;
-    title: string;
-    createdAt: string;
-    updatedAt: string;
-  }[];
+  applications: Application[];
 }
 
 export default function ProfileBottom({ resumes, applications }: Props) {
