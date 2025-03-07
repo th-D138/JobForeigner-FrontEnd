@@ -1,0 +1,9 @@
+.languageButton {
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  @media (max-width: 1280px) {
+    scale: 0.9;
+  }
+}
