@@ -1,6 +1,4 @@
-import ProfileBottom from './ProfileBottom';
-import ProfileImage from './ProfileImage';
-import ProfileInfo from './ProfileInfo';
+import { ProfileImage, ProfileInfo, ProfileBottom } from '../profile';
 import styles from './userProfile.module.scss';
 
 const userInfo = {

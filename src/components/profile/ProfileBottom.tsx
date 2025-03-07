@@ -1,6 +1,6 @@
 import styles from './profileBottom.module.scss';
 
-export interface Props {
+interface Props {
   resumes: {
     id: number;
     title: string;

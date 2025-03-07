@@ -1,7 +1,7 @@
 import { Camera } from 'lucide-react';
 import styles from './profileImage.module.scss';
 
-export interface Props {
+interface Props {
   imageUrl?: string;
 }
 

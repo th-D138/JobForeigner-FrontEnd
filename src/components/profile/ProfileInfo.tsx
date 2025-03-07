@@ -1,7 +1,7 @@
 import { Mail, MapPin, Phone } from 'lucide-react';
 import styles from './profileInfo.module.scss';
 
-export interface Props {
+interface Props {
   name: string;
   email: string;
   phoneNumber: string;
