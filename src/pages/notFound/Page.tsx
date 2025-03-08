@@ -1,9 +1,11 @@
 import { ArrowLeft, Home, SearchIcon } from 'lucide-react';
 import styles from './page.module.scss';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import Button from '@/components/common/button/Button';
 
 export default function NotFoundPage() {
+  const navigate = useNavigate();
+
   return (
     <div className={styles.container}>
       <div className={styles.wrapper}>
@@ -52,13 +54,13 @@ export default function NotFoundPage() {
           </svg>
         </div>
         <div className={styles.buttons}>
-          <Button variant="outline">
+          <Button variant="outline" onClick={() => navigate(-1)}>
             <span className={styles.iconButton}>
               <ArrowLeft className={styles.icon} />
               이전 페이지로
             </span>
           </Button>
-          <Link to="/" replace>
+          <Link to="/">
             <Button>
               <span className={styles.iconButton}>
                 <Home className={styles.icon} />
