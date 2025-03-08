@@ -1,0 +1,20 @@
+.profileCard {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profileCardBody {
+  padding: 1.5rem;
+}
+
+.profileRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+.borderTop {
+  border-top: 1px solid #e5e7eb;
+  padding: 1rem 1.5rem;
+}
