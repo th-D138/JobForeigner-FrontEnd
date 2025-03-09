@@ -1,0 +1,53 @@
+// dropdown.module.scss
+
+.container {
+	width: 20rem;
+	background-color: white;
+	border: 1px solid var(--color-gray-400);
+	border-radius: 8px;
+	position: relative;
+	box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.selected {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+	transition: background-color 0.2s ease-in-out;
+
+	&:hover {
+		background-color: var(--color-gray-100);
+	}
+}
+
+.dropdown {
+	width: 100%;
+	margin-top: 0.1rem;
+	position: absolute;
+	top: 100%;
+	left: 0;
+	background-color: white;
+	border: 1px solid var(--color-gray-400);
+	border-top: none;
+	border-radius: 0 0 8px 8px;
+	max-height: 15rem;
+	overflow-y: auto;
+	z-index: 1000;
+	box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+	li {
+		padding: 0.75rem 1rem;
+		cursor: pointer;
+		transition: background-color 0.2s ease-in-out;
+
+		&:hover {
+			background-color: var(--color-gray-200);
+		}
+
+		&:not(:last-child) {
+			border-bottom: 1px solid var(--color-gray-400);
+		}
+	}
+}
