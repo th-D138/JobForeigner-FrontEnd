@@ -1,21 +1,17 @@
+import Input from '../common/input/Input';
 import styles from './searchSectionForm.module.scss';
-import { Search, MapPin } from 'lucide-react';
+import { MapPin } from 'lucide-react';
 
 export default function SearchSectionForm() {
   return (
     <form className={styles.searchBox}>
       <div className={styles.searchBoxRow}>
-        <div className={styles.searchInputWrapper}>
-          <Search className={styles.inputIcon} />
-          <input
-            type="text"
-            name="search"
-            placeholder="직무, 회사명, 키워드"
-            className={styles.searchInput}
-            required
-            maxLength={50}
-          />
-        </div>
+        <Input
+          type="text"
+          name="search"
+          placeholder="직무, 회사명, 키워드"
+          icon="search"
+        />
         <div className={styles.searchSelectWrapper}>
           <MapPin className={styles.inputIcon} />
           <select name="region" className={styles.searchSelect} required>
