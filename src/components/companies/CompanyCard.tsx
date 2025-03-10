@@ -19,17 +19,19 @@ const CompanyCard = ({
 					<div className={styles.description}>{description}</div>
 				</div>
 			</div>
-			<div className={styles.companyType}>
-				<Building2 width="1.4rem" />
-				<span>{companyType}</span>
-			</div>
-			<div className={styles.adress}>
-				<MapPin width="1.4rem" />
-				<span>{adress}</span>
-			</div>
-			<div className={styles.employeeNum}>
-				<Users width="1.4rem" />
-				<span>{numOfEmployee}</span>
+			<div className={styles.detailInfo}>
+				<div className={styles.companyType}>
+					<Building2 width="1.4rem" />
+					<span>{companyType}</span>
+				</div>
+				<div className={styles.adress}>
+					<MapPin width="1.4rem" />
+					<span>{adress}</span>
+				</div>
+				<div className={styles.employeeNum}>
+					<Users width="1.4rem" />
+					<span>{numOfEmployee}</span>
+				</div>
 			</div>
 		</div>
 	);
