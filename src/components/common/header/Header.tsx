@@ -4,13 +4,14 @@ import { navItems } from '@/lib/constants/navItems';
 import SearchForm from './SearchForm';
 import LanguageButton from './LanguageButton';
 import Button from '../button/Button';
+import { title as Logo } from '@/lib/constants/serviceName';
 
 export default function Header() {
   return (
     <div className={styles.header}>
       <div className={styles.left}>
         <div className={styles.logo}>
-          <Link to="/">JobForeigner</Link>
+          <Link to="/">{Logo}</Link>
         </div>
         <ul className={styles.nav}>
           {navItems.map(({ id, name, link }) => (
@@ -29,12 +30,10 @@ export default function Header() {
         <SearchForm />
         <LanguageButton />
         <Link to="/login">
-          <Button size="small">로그인</Button>
+          <Button>로그인</Button>
         </Link>
         <Link to="/signUp">
-          <Button size="small" color="#ffffff" background="#4335a7">
-            회원가입
-          </Button>
+          <Button>회원가입</Button>
         </Link>
       </div>
     </div>
