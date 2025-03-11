@@ -11,7 +11,7 @@ export default function Header() {
     <div className={styles.header}>
       <div className={styles.left}>
         <div className={styles.logo}>
-          <Link to="/">{Logo}</Link>
+          <Link to='/'>{Logo}</Link>
         </div>
         <ul className={styles.nav}>
           {navItems.map(({ id, name, link }) => (
@@ -29,10 +29,10 @@ export default function Header() {
       <div className={styles.right}>
         <SearchForm />
         <LanguageButton />
-        <Link to="/login">
-          <Button>로그인</Button>
+        <Link to='/login'>
+          <Button variant='outline'>로그인</Button>
         </Link>
-        <Link to="/signUp">
+        <Link to='/signUp'>
           <Button>회원가입</Button>
         </Link>
       </div>
