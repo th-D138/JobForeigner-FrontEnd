@@ -19,22 +19,22 @@
 
 /* 기본(default) 스타일 */
 .default {
-  background-color: #6b46c1; /* bg-purple-600 */
+  background-color: var(--color-purple-600); /* bg-purple-600 */
   color: #fff;
   border: none;
 
   &:hover {
-    background-color: #553c9a; /* hover:bg-purple-700 */
+    background-color: var(--color-purple-700); /* hover:bg-purple-700 */
   }
 }
 
 /* 테두리(Outline) 스타일 */
 .outline {
-  background-color: transparent;
-  border: 1px solid #e5e7eb; /* border-gray-200 */
+  background-color: #fff;
+  border: 1px solid var(--color-gray-200); /* border-gray-200 */
   color: #111827; /* text-gray-900 */
 
   &:hover {
-    background-color: #f9fafb; /* hover:bg-gray-50 */
+    background-color: var(--color-gray-50); /* hover:bg-gray-50 */
   }
 }
