@@ -1,5 +1,6 @@
 import { MapPin, Search } from 'lucide-react';
 import styles from './input.module.scss';
+import clsx from 'clsx';
 
 const getIcon = (icon?: string) => {
   switch (icon) {
@@ -20,7 +21,7 @@ export default function Input({ icon, ...props }: InputProps) {
   return (
     <div className={styles.inputWrapper}>
       {getIcon(icon)}
-      <input className={styles.input} {...props} />
+      <input className={clsx(styles.input, icon && styles.isIcon)} {...props} />
     </div>
   );
 }
