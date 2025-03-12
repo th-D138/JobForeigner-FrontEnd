@@ -1,0 +1,19 @@
+.progress {
+  position: relative;
+  width: 100%;
+  height: 0.5rem;
+  background-color: var(--color-gray-200);
+  border-radius: 9999px;
+  overflow: hidden;
+}
+
+.progressBar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background-color: var(--color-indigo-500);
+  border-radius: inherit;
+  transition: width 0.3s ease;
+  width: 0%;
+}
