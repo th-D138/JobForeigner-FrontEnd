@@ -15,6 +15,16 @@
   &:focus {
     box-shadow: 0 0 0 2px rgba(128, 90, 213, 0.3); /* 보라색 포커스 효과 */
   }
+
+  &.medium {
+    padding: 0.75rem 1.5rem; /* px-6 py-4 */
+    font-size: 1rem; /* text-base */
+  }
+
+  &.large {
+    padding: 1rem 2rem; /* px-8 py-6 */
+    font-size: 1.125rem; /* text-lg */
+  }
 }
 
 /* 기본(default) 스타일 */
