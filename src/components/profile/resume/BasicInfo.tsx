@@ -1,6 +1,6 @@
 import Input from '@/components/common/input/Input';
 import styles from './basicInfo.module.scss';
-import InputField from './InputField';
+import InputField from '../../common/field/InputField';
 import Button from '@/components/common/button/Button';
 import { Camera } from 'lucide-react';
 
