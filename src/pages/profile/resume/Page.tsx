@@ -1,6 +1,7 @@
 import BasicInfo from '@/components/profile/resume/BasicInfo';
 import styles from './page.module.scss';
 import BottomActions from '@/components/profile/resume/BottomActions';
+import AddressInfo from '@/components/profile/resume/AddressInfo';
 
 export default function CreateResumePage() {
   return (
@@ -11,6 +12,7 @@ export default function CreateResumePage() {
       </div>
       <form className={styles.contentSection}>
         <BasicInfo />
+        <AddressInfo />
       </form>
       <BottomActions />
     </div>
