@@ -3,6 +3,10 @@ import { CompanyType } from "@/components/companies/CompanyLists";
 import { useLocation } from "react-router-dom";
 import { useState } from "react";
 import CompanyInfoPage from "./subPage/CompanyInfoPage";
+import RecruitInfo from "./subPage/RecruitInfo";
+import SalaryInfo from "./subPage/SalaryInfo";
+import RatingInfo from "./subPage/RatingInfo";
+import ReviewInfo from "./subPage/ReviewInfo";
 
 const DetailPage = () => {
 	const location = useLocation();
@@ -29,15 +33,21 @@ const DetailPage = () => {
 				))}
 			</div>
 			<div className={styles.selectInfo}>
-				<CompanyInfoPage
-					companyAdress={data.adress}
-					companyName={data.companyName}
-					companyType={data.companyType}
-					description={data.description}
-					homepageUrl={data.homepageUrl}
-					numOfEmployee={data.numOfEmployee}
-					benefits={data.benefits}
-				/>
+				{selectedTab === "기업정보" && (
+					<CompanyInfoPage
+						companyAdress={data.adress}
+						companyName={data.companyName}
+						companyType={data.companyType}
+						description={data.description}
+						homepageUrl={data.homepageUrl}
+						numOfEmployee={data.numOfEmployee}
+						benefits={data.benefits}
+					/>
+				)}
+				{selectedTab === "채용" && <RecruitInfo />}
+				{selectedTab === "연봉" && <SalaryInfo />}
+				{selectedTab === "기업평점" && <RatingInfo />}
+				{selectedTab === "후기" && <ReviewInfo />}
 			</div>
 		</div>
 	);
