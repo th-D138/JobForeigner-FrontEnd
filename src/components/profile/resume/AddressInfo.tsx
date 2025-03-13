@@ -66,10 +66,10 @@ export default function AddressInfo() {
       <h2 className={styles.title}>주소</h2>
       <div className={styles.addressSection}>
         <InputField label='시/도' required>
-          <Select options={sido} />
+          <Select name='sido' options={sido} />
         </InputField>
         <InputField label='시/군/구' required>
-          <Select options={sigungu} />
+          <Select name='sigungu' options={sigungu} />
         </InputField>
       </div>
     </div>
