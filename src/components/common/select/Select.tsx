@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './select.module.scss';
-import { MapPin, Search } from 'lucide-react';
+import { ChevronDown, MapPin, Search } from 'lucide-react';
+import clsx from 'clsx';
 
 const getIcon = (icon?: string) => {
   switch (icon) {
@@ -67,11 +68,12 @@ export default function Select({
     <div className={styles.selectWrapper} ref={wrapperRef} {...props}>
       {getIcon(icon)}
       <div
-        className={styles.customSelect}
+        className={clsx(styles.customSelect, icon && styles.isIcon)}
         onClick={() => setIsOpen(prev => !prev)}
         tabIndex={0}
       >
         {selectedOption ? selectedOption.label : '옵션 선택'}
+        <ChevronDown className={styles.arrow} />
       </div>
       {isOpen && (
         <ul className={styles.optionsList}>
