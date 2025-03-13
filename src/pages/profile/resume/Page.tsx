@@ -13,8 +13,8 @@ export default function CreateResumePage() {
       <form className={styles.contentSection}>
         <BasicInfo />
         <AddressInfo />
+        <BottomActions />
       </form>
-      <BottomActions />
     </div>
   );
 }
