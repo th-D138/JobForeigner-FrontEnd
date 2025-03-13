@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import styles from "./companyList.module.scss";
 import CompanyCard from "./CompanyCard";
+import { Link } from "react-router-dom";
 
 export type CompanyType = {
 	id: number;
@@ -10,6 +11,8 @@ export type CompanyType = {
 	companyType: string;
 	adress: string;
 	numOfEmployee: number;
+	homepageUrl: string;
+	benefits: string;
 };
 
 const dummyCompanies: CompanyType[] = [
@@ -22,6 +25,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "쇼핑몰/오픈마켓",
 		adress: "서울 성동구 성수동 2가",
 		numOfEmployee: 510,
+		homepageUrl: "https://www.musinsa.com",
+		benefits:
+			"무신사는 직원들이 창의력을 발휘할 수 있도록 다양한 복지 혜택을 제공합니다. 무료 커피, 편안한 휴게실, 유연 근무제, 그리고 충분한 연차가 마련되어 있어 모두가 만족할 수 있는 환경을 조성하고 있습니다.",
 	},
 	{
 		id: 2,
@@ -32,6 +38,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "이커머스",
 		adress: "서울 강남구",
 		numOfEmployee: 10000,
+		homepageUrl: "https://www.coupang.com",
+		benefits:
+			"쿠팡은 직원들이 안정적이고 효율적으로 일할 수 있도록 성과급, 유연 근무제, 식대 지원 등 다양한 복지 혜택을 제공하며, 최고의 업무 환경을 보장합니다.",
 	},
 	{
 		id: 3,
@@ -42,6 +51,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "인터넷 서비스",
 		adress: "경기 성남시 분당구",
 		numOfEmployee: 9000,
+		homepageUrl: "https://www.naver.com",
+		benefits:
+			"네이버는 정기 건강검진, 주택자금 지원, 문화생활비 지원 등 다양한 복지 제도를 운영하여 직원들이 안정적이고 창의적인 환경에서 일할 수 있도록 지원합니다.",
 	},
 	{
 		id: 4,
@@ -52,6 +64,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "IT/모바일",
 		adress: "경기 판교",
 		numOfEmployee: 8000,
+		homepageUrl: "https://www.kakao.com",
+		benefits:
+			"카카오는 자유로운 근무 문화와 창의적인 업무 환경을 위해 자율 근무제, 사내 카페, 체력단련실 등 다양한 복지 혜택을 제공하며, 직원들의 만족도를 높이고 있습니다.",
 	},
 	{
 		id: 5,
@@ -62,6 +77,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "배달/푸드테크",
 		adress: "서울 마포구",
 		numOfEmployee: 1200,
+		homepageUrl: "https://www.baedalminjok.com",
+		benefits:
+			"배달의민족은 실용적인 복지 혜택으로 식대 지원, 자율 복장, 휴식실 제공 등을 통해 직원들이 편안하게 근무할 수 있는 환경을 조성하고 있습니다.",
 	},
 	{
 		id: 6,
@@ -72,6 +90,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "핀테크",
 		adress: "서울 강남구",
 		numOfEmployee: 1500,
+		homepageUrl: "https://www.toss.im",
+		benefits:
+			"토스는 유연 근무제, 스톡옵션, 건강검진 등 경쟁력 있는 복지 혜택을 제공하여 직원들이 혁신적인 아이디어를 실현할 수 있는 안정적인 환경을 지원합니다.",
 	},
 	{
 		id: 7,
@@ -82,6 +103,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "전자/가전",
 		adress: "경기 수원",
 		numOfEmployee: 320000,
+		homepageUrl: "https://www.samsung.com",
+		benefits:
+			"삼성전자는 연봉 인상, 스톡옵션, 보너스 등 다양한 복지 제도를 통해 전 세계 직원들이 최고의 성과를 낼 수 있는 환경을 제공하고 있습니다.",
 	},
 	{
 		id: 8,
@@ -92,6 +116,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "전자/가전",
 		adress: "서울 영등포구",
 		numOfEmployee: 70000,
+		homepageUrl: "https://www.lg.com",
+		benefits:
+			"LG전자는 자기개발 지원, 복지포인트, 휴가 지원 등 다양한 복지 혜택을 제공하여 직원들이 건강하고 만족스러운 근무 환경에서 일할 수 있도록 돕습니다.",
 	},
 	{
 		id: 9,
@@ -102,6 +129,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "자동차",
 		adress: "서울 서초구",
 		numOfEmployee: 500000,
+		homepageUrl: "https://www.hyundai.com",
+		benefits:
+			"현대자동차는 연차, 건강검진, 자체 식당 등의 복지 혜택을 통해 직원들이 안정적이고 효율적인 환경에서 최고의 성과를 낼 수 있도록 지원합니다.",
 	},
 	{
 		id: 10,
@@ -112,6 +142,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "자동차",
 		adress: "서울 서초구",
 		numOfEmployee: 300000,
+		homepageUrl: "https://www.kia.com",
+		benefits:
+			"기아는 자유로운 근무 환경, 스톡옵션, 연말 보너스 등 다양한 복지 혜택을 제공하여 직원들이 창의적으로 일할 수 있는 환경을 마련하고 있습니다.",
 	},
 	{
 		id: 11,
@@ -122,6 +155,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "게임/엔터테인먼트",
 		adress: "서울 강남구",
 		numOfEmployee: 500,
+		homepageUrl: "https://www.kakaogames.com",
+		benefits:
+			"카카오게임즈는 게임 산업의 선두주자로서 게임 관련 혜택, 자율 근무, 연차 등 다양한 복지 제도를 통해 직원들이 창의적이고 즐겁게 일할 수 있는 분위기를 조성하고 있습니다.",
 	},
 	{
 		id: 12,
@@ -132,6 +168,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "게임/엔터테인먼트",
 		adress: "서울 송파구",
 		numOfEmployee: 1000,
+		homepageUrl: "https://www.smilegate.com",
+		benefits:
+			"스마일게이트는 성과급, 스톡옵션, 건강검진 등 다양한 복지 혜택을 제공하여 직원들이 안정적으로 업무에 집중할 수 있도록 돕습니다.",
 	},
 	{
 		id: 13,
@@ -142,6 +181,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "게임/엔터테인먼트",
 		adress: "서울 중구",
 		numOfEmployee: 2000,
+		homepageUrl: "https://www.netmarble.com",
+		benefits:
+			"넷마블은 자율 근무제, 문화비 지원, 연차 등 다양한 복지 혜택을 통해 창의적인 업무 환경을 조성하고 직원들의 만족도를 높이고 있습니다.",
 	},
 	{
 		id: 14,
@@ -152,6 +194,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "게임/엔터테인먼트",
 		adress: "경기 성남시",
 		numOfEmployee: 8000,
+		homepageUrl: "https://www.ncsoft.com",
+		benefits:
+			"NCSoft는 연차, 건강검진, 자유로운 복장 등의 복지 혜택을 통해 직원들이 창의적이고 효율적으로 업무를 수행할 수 있도록 지원합니다.",
 	},
 	{
 		id: 15,
@@ -162,6 +207,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "게임/엔터테인먼트",
 		adress: "서울 서대문구",
 		numOfEmployee: 1500,
+		homepageUrl: "https://www.krafton.com",
+		benefits:
+			"크래프톤은 주식매수선택권, 보너스, 자율 복장 등 다양한 복지 혜택을 통해 직원들이 창의적인 아이디어를 실현할 수 있는 환경을 제공합니다.",
 	},
 	{
 		id: 16,
@@ -172,6 +220,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "게임/엔터테인먼트",
 		adress: "서울 강북구",
 		numOfEmployee: 600,
+		homepageUrl: "https://www.pearlabyss.com",
+		benefits:
+			"펄어비스는 자유로운 근무 환경, 건강검진, 식대 지원 등 다양한 복지 혜택을 통해 직원들이 안정적으로 업무에 집중할 수 있는 환경을 제공합니다.",
 	},
 	{
 		id: 17,
@@ -182,6 +233,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "게임/엔터테인먼트",
 		adress: "서울 강남구",
 		numOfEmployee: 400,
+		homepageUrl: "https://www.wgame.com",
+		benefits:
+			"더블유게임즈는 성과급, 자율 근무, 문화비 지원 등 다양한 복지 혜택을 통해 직원들이 창의적이고 즐겁게 일할 수 있는 분위기를 조성하고 있습니다.",
 	},
 	{
 		id: 18,
@@ -192,6 +246,9 @@ const dummyCompanies: CompanyType[] = [
 		companyType: "제조/금융",
 		adress: "서울 종로구",
 		numOfEmployee: 100000,
+		homepageUrl: "https://www.hanwha.com",
+		benefits:
+			"한화는 연봉 인상, 복지 포인트, 자율복장 등 폭넓은 복지 혜택을 제공하여 직원들의 만족도와 업무 효율성을 극대화하고 있습니다.",
 	},
 ];
 
@@ -206,7 +263,9 @@ const CompanyLists = () => {
 			<div className={styles.title}>검색된 기업</div>
 			<div className={styles.companyList}>
 				{companies?.map((ele) => (
-					<CompanyCard key={ele.id} {...ele} />
+					<Link to={`/companies/${ele.id}`} key={ele.id} state={ele}>
+						<CompanyCard key={ele.id} {...ele} />
+					</Link>
 				))}
 			</div>
 		</div>
