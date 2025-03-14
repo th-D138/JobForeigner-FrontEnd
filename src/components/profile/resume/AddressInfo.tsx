@@ -1,6 +1,6 @@
-import InputField from '@/components/common/field/InputField';
 import styles from './addressInfo.module.scss';
-import Select from '@/components/common/select/Select';
+import SelectField from '@/components/common/field/SelectField';
+import { useFormContext } from 'react-hook-form';
 
 const sido = [
   {
@@ -61,16 +61,26 @@ const sigungu = [
 ];
 
 export default function AddressInfo() {
+  const { control } = useFormContext();
+
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>주소</h2>
       <div className={styles.addressSection}>
-        <InputField label='시/도' required>
-          <Select name='sido' options={sido} />
-        </InputField>
-        <InputField label='시/군/구' required>
-          <Select name='sigungu' options={sigungu} />
-        </InputField>
+        <SelectField
+          control={control}
+          name='sido'
+          label='시/도'
+          required={true}
+          options={sido}
+        />
+        <SelectField
+          control={control}
+          name='sigungu'
+          label='시/군/구'
+          required={true}
+          options={sigungu}
+        />
       </div>
     </div>
   );
