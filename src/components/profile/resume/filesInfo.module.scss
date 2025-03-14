@@ -1,0 +1,108 @@
+.container {
+  width: 100%;
+  padding: 1.5rem 1.75rem;
+  background-color: #fff;
+  border-radius: 10px;
+  border: 1px solid var(--color-gray-200);
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.1);
+
+  > * + * {
+    margin-top: 1.5rem;
+  }
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--color-gray-900);
+}
+
+.dropzone {
+  border: 2px dashed var(--color-gray-200);
+  border-radius: 10px;
+  padding: 1.5rem;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    border-color: var(--color-purple-200);
+  }
+}
+
+.fileUpIcon {
+  width: 3rem;
+  height: 3rem;
+  color: var(--color-gray-500);
+}
+
+.text {
+  font-size: 1.125rem;
+  color: var(--color-gray-900);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.description {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+.fileSelectTitle {
+  font-size: 1.5rem;
+  color: var(--color-gray-700);
+  margin-top: 1rem;
+}
+
+.uploadedFiles {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.fileSelectTitle {
+  font-size: 1.5rem;
+  color: var(--color-gray-700);
+}
+
+.fileItem {
+  width: 100%;
+  background-color: var(--color-gray-50);
+  border-radius: 10px;
+  padding: 0.75rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fileItemLeft {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.fileIcon {
+  color: var(--color-purple-500);
+}
+
+.fileInfo {
+  margin-left: 0.75rem;
+}
+
+.fileName {
+  font-size: 1.125rem;
+  color: var(--color-gray-900);
+}
+
+.fileSize {
+  font-size: 0.875rem;
+  color: var(--color-gray-500);
+}
+
+.fileDeleteIcon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--color-gray-500);
+  cursor: pointer;
+}
