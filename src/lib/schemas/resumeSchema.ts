@@ -27,6 +27,7 @@ export const resumeSchema = z.object({
     .string()
     .min(1, ERROR_MSG.required)
     .regex(REGEX.phoneNumber, ERROR_MSG.phoneNumber),
+  photo: z.instanceof(File).optional().nullable(),
   sido: z.string().min(1, ERROR_MSG.required),
   sigungu: z.string().min(1, ERROR_MSG.required),
   job: z.string().min(1, ERROR_MSG.required),

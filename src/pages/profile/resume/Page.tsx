@@ -20,6 +20,7 @@ const defaultValues = {
   name: '',
   email: '',
   phoneNumber: '',
+  photo: null,
   sido: '',
   sigungu: '',
   job: '',
