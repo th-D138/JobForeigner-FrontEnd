@@ -49,6 +49,7 @@ export default function experienceInfo() {
                 label='회사명'
                 placeholder='회사명을 입력하세요'
                 required={true}
+                maxLength={30}
               />
               <InputField
                 control={control}
@@ -56,6 +57,7 @@ export default function experienceInfo() {
                 label='직위'
                 placeholder='직위를 입력하세요'
                 required={true}
+                maxLength={30}
               />
             </div>
             <InputField
@@ -64,12 +66,14 @@ export default function experienceInfo() {
               label='근무 기간'
               placeholder='예: 2020.03 - 2022.02'
               required={true}
+              maxLength={30}
             />
             <TextareaField
               control={control}
               name={`experiences.${index}.mainTask`}
               label='주요 업무'
               placeholder='주요 업무와 성과를 입력하세요'
+              maxLength={2000}
             />
           </div>
         </div>

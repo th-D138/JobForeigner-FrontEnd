@@ -51,6 +51,7 @@ export default function EducationInfo() {
                 label='학교명'
                 placeholder='학교명을 입력하세요'
                 required={true}
+                maxLength={30}
               />
               <InputField
                 control={control}
@@ -58,6 +59,7 @@ export default function EducationInfo() {
                 label='전공'
                 placeholder='전공을 입력하세요'
                 required={true}
+                maxLength={30}
               />
             </div>
             <div className={styles.degreeAndPeriod}>
@@ -67,6 +69,7 @@ export default function EducationInfo() {
                 label='학위'
                 placeholder='예: 학사, 석사, 박사'
                 required={true}
+                maxLength={10}
               />
               <InputField
                 control={control}
@@ -74,6 +77,7 @@ export default function EducationInfo() {
                 label='재학 기간'
                 placeholder='예: 2020.03 - 2022.02'
                 required={true}
+                maxLength={30}
               />
             </div>
             <TextareaField
@@ -81,6 +85,7 @@ export default function EducationInfo() {
               name={`educations.${index}.description`}
               label='추가 정보'
               placeholder='학점, 주요 활동 등 추가 정보를 입력하세요'
+              maxLength={2000}
             />
           </div>
         </div>
