@@ -108,6 +108,7 @@ export const resumeSchema = z.object({
         .max(30, ERROR_MSG.exceed.thirty),
     }),
   ),
+  files: z.array(z.instanceof(File)),
   links: z.array(
     z.object({
       title: z

@@ -13,6 +13,7 @@ import AwardsInfo from '@/components/profile/resume/AwardsInfo';
 import CertificatesInfo from '@/components/profile/resume/certificatesInfo';
 import LinkInfo from '@/components/profile/resume/LinkInfo';
 import IntroductionInfo from '@/components/profile/resume/IntroductionInfo';
+import FilesInfo from '@/components/profile/resume/FilesInfo';
 
 const defaultValues = {
   title: '',
@@ -27,6 +28,7 @@ const defaultValues = {
   educations: [],
   awards: [],
   certificates: [],
+  files: [],
   links: [],
   introduction: '',
 };
@@ -64,6 +66,7 @@ export default function CreateResumePage() {
           <EducationInfo />
           <AwardsInfo />
           <CertificatesInfo />
+          <FilesInfo />
           <LinkInfo />
           <IntroductionInfo />
           <BottomActions />
