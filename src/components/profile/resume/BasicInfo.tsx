@@ -1,14 +1,30 @@
-import Input from '@/components/common/input/Input';
 import styles from './basicInfo.module.scss';
 import InputField from '../../common/field/InputField';
 import Button from '@/components/common/button/Button';
 import { Camera } from 'lucide-react';
 import { useFormContext } from 'react-hook-form';
-
-const image = null;
+import { useRef, useState } from 'react';
 
 export default function BasicInfo() {
-  const { control } = useFormContext();
+  const { control, setValue } = useFormContext();
+  const [image, setImage] = useState<string | null>(null);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const file = event.target.files?.[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.onloadend = () => {
+        setImage(reader.result as string);
+        setValue('photo', file);
+      };
+      reader.readAsDataURL(file);
+    }
+  };
+
+  const handleUploadClick = () => {
+    fileInputRef.current?.click();
+  };
 
   return (
     <div className={styles.container}>
@@ -39,18 +55,21 @@ export default function BasicInfo() {
         <div className={styles.imageRow}>
           <div className={styles.imageWrapper}>
             {image ? (
-              <img
-                src='https://via.placeholder.com/150'
-                alt='profileImage'
-                className={styles.image}
-              />
+              <img src={image} alt='profileImage' className={styles.image} />
             ) : (
               <div className={styles.placeholder}>
                 <Camera />
               </div>
             )}
           </div>
-          <Button variant='outline' size='large'>
+          <input
+            type='file'
+            accept='image/*'
+            ref={fileInputRef}
+            onChange={handleImageUpload}
+            hidden
+          />
+          <Button variant='outline' size='large' onClick={handleUploadClick}>
             사진 업로드
           </Button>
         </div>
