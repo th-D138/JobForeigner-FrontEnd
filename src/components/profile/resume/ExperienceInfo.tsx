@@ -22,7 +22,7 @@ export default function experienceInfo() {
   return (
     <div className={styles.container}>
       <div className={styles.header}>
-        <h2 className={styles.title}>경력사항</h2>
+        <h2 className={styles.title}>경력</h2>
         <Button
           type='button'
           variant='outline'
@@ -33,6 +33,9 @@ export default function experienceInfo() {
           경력 추가
         </Button>
       </div>
+      {!fields.length ? (
+        <p className={styles.appendText}>경력 정보를 추가해주세요</p>
+      ) : null}
       {fields.map((field, index) => (
         <div key={field.id} className={styles.experienceWrapper}>
           <div className={styles.experienceHeader}>
