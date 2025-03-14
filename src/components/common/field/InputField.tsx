@@ -1,23 +1,73 @@
-import styles from './inputField.module.scss';
+import { formatPhoneNumber } from '@/lib/utils/formatters';
+import Input from '../input/Input';
+import FormField from '../form/FormField';
+import FormItem from '../form/FormItem';
+import FormLabel from '../form/FormLabel';
+import FormMessage from '../form/FormMessage';
+import type {
+  Control,
+  ControllerRenderProps,
+  FieldValues,
+} from 'react-hook-form';
 
-interface InputFieldProps {
+type InputFieldProps = {
+  control: Control<FieldValues, any>;
+  name: string;
   label: string;
+  type?: 'text' | 'phone' | 'number' | 'date' | 'datetime-local';
+  placeholder?: string;
   required?: boolean;
-  children: React.ReactNode;
-}
+} & React.InputHTMLAttributes<HTMLInputElement>;
 
-export default function InputField({
+const InputField = ({
+  control,
+  name,
   label,
+  type = 'text',
+  placeholder = '필수 입력 칸 입니다.',
   required = false,
-  children,
-}: InputFieldProps) {
+}: InputFieldProps) => {
+  const handleInput = (
+    e: React.FormEvent<HTMLInputElement>,
+    field: ControllerRenderProps<FieldValues, string>,
+  ) => {
+    const target = e.currentTarget;
+
+    if (type === 'phone') {
+      target.value = formatPhoneNumber(target.value);
+      field.onChange(target.value);
+      return;
+    }
+
+    field.onChange(target.value);
+  };
+
   return (
-    <div className={styles.container}>
-      <label className={styles.label}>
-        {label}
-        {required && <span className={styles.required}>*</span>}
-      </label>
-      {children}
-    </div>
+    <FormField
+      control={control}
+      name={name}
+      render={({ field }) => (
+        <FormItem>
+          <FormLabel>
+            {label} &nbsp;{' '}
+            {required && (
+              <span aria-label='required' style={{ color: '#ff7f00' }}>
+                *
+              </span>
+            )}
+          </FormLabel>
+          <Input
+            {...field}
+            placeholder={placeholder}
+            onChange={e => handleInput(e, field)}
+            onKeyDown={e => e.key === 'Enter' && e.preventDefault()}
+            type={type}
+          />
+          <FormMessage />
+        </FormItem>
+      )}
+    />
   );
-}
+};
+
+export default InputField;
