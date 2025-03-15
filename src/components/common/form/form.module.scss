@@ -1,0 +1,11 @@
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+}
+
+.formMessage {
+  font-size: 1rem;
+  color: var(--color-red-500);
+}

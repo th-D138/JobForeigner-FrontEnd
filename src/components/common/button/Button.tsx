@@ -1,29 +1,28 @@
-import styles from './button.module.scss';
+import React from 'react';
+import styles from './Button.module.scss';
 import clsx from 'clsx';
 
-type Props = {
-  children: string;
-  className?: string;
-  size?: 'small' | 'medium' | 'large';
-  color?: string;
-  background?: string;
-  onClick?: () => void;
-} & React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonVariant = 'default' | 'outline';
+type ButtonSize = 'small' | 'medium' | 'large';
 
+interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variant?: ButtonVariant;
+  size?: ButtonSize;
+}
+
+/**
+ * - variant: "default" | "outline"
+ * - 나머지 props: (onClick, children 등) ButtonHTMLAttributes
+ */
 export default function Button({
+  variant = 'default',
+  size = 'small',
   children,
-  className = '',
-  size = 'medium',
-  color = '#000000',
-  background = 'none',
-  onClick,
   ...props
-}: Props) {
+}: ButtonProps) {
   return (
     <button
-      className={clsx(styles.button, styles[size], className)}
-      style={{ color, background }}
-      onClick={onClick}
+      className={clsx(styles.button, styles[variant], styles[size])}
       {...props}
     >
       {children}

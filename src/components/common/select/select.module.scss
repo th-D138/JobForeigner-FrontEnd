@@ -1,0 +1,67 @@
+.selectWrapper {
+  position: relative;
+  flex: 1;
+}
+
+.icon {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--color-gray-400);
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+.customSelect {
+  width: 100%;
+  padding: 0.75rem 1rem 0.75rem 1rem;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.375rem;
+  background-color: #fff;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  &:focus,
+  &:active {
+    border-color: var(--color-purple-600);
+    box-shadow: 0 0 0 2px rgba(var(--color-purple-600), 0.3);
+  }
+
+  &.isIcon {
+    padding-left: 2.5rem;
+  }
+
+  .arrow {
+    width: 1.5rem;
+    height: 1.5rem;
+    color: var(--color-gray-400);
+  }
+}
+
+.optionsList {
+  position: absolute;
+  top: calc(100% + 0.25rem);
+  left: 0;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.375rem;
+  max-height: 200px;
+  overflow-y: auto;
+  z-index: 1000;
+}
+
+.option {
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f3f4f6;
+  }
+}
