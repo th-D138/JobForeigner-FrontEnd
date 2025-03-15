@@ -33,6 +33,7 @@ export const router = createBrowserRouter(
         <Route index element={<SuspensedMainPage />} />
         <Route path="community" element={<SuspensedCommunityPage />} />
         <Route path="companies" element={<SuspensedCompaniesPage />} />
+        <Route path="companies/:id" element={<SuspensedDetailCompanyPage />} />
       </Route>
 
       <Route path="/" element={<LayoutWithSidebar />}>
