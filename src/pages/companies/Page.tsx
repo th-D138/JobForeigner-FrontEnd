@@ -1,7 +1,14 @@
+import CompanyLists from "@/components/companies/CompanyLists";
+import styles from "./page.module.scss";
+import SearchBar from "@/components/companies/SearchBar";
+import SearchFilterBar from "@/components/companies/SearchFilterBar";
+
 export default function CompaniesPage() {
-  return (
-    <>
-      <div>기업정보 페이지</div>
-    </>
-  );
+	return (
+		<div className={styles.container}>
+			<SearchBar />
+			<SearchFilterBar />
+			<CompanyLists />
+		</div>
+	);
 }
