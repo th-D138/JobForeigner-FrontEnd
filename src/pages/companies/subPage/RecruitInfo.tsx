@@ -36,7 +36,6 @@ const dummyRecruitList: RecruitListProps[] = [
 const RecruitInfo = () => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.titleText}>채용 정보</div>
 			<div className={styles.recruitInfo}>
 				{dummyRecruitList.map((recruit, index) => (
 					<RecruitList key={index} {...recruit} />

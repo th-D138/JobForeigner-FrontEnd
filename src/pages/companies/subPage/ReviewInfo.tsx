@@ -68,7 +68,6 @@ const dummyDetailReviews: DetailReview[] = [
 const ReviewInfo = () => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.titleText}>기업 후기</div>
 			<div>
 				{dummyCompanyReviews.map((ele, idx) => (
 					<TotalReviewBar

@@ -50,7 +50,6 @@ const data: RatingInfoType[] = [
 const RatingInfo = () => {
 	return (
 		<div className={styles.container}>
-			<div className={styles.titleText}>기업 평점 정보</div>
 			<RadarChartComponent data={data} />
 			<div className={styles.titleText}>세부 평점 정보</div>
 			<div className={styles.ratingInfoBoxContainer}>
