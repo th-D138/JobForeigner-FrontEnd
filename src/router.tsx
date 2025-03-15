@@ -1,10 +1,10 @@
 import {
-	createBrowserRouter,
-	createRoutesFromElements,
-	Route,
-} from "react-router-dom";
-import { lazy } from "react";
-import Layout from "./components/layout/Layout";
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+} from 'react-router-dom';
+import { lazy } from 'react';
+import Layout from './components/layout/Layout';
 
 // 만든 HOC 임포트
 import withSuspense from '@/pages/withSuspense';
@@ -14,6 +14,7 @@ const MainPage = lazy(() => import('./pages/main/Page'));
 const ProfilePage = lazy(() => import('./pages/profile/Page'));
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
+const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
 const NotFoundPage = lazy(() => import('./pages/notFound/Page'));
 
 // 각 페이지를 Suspense가 적용된 HOC로 감싸기
