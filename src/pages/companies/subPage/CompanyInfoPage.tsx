@@ -25,6 +25,7 @@ const CompanyInfoPage = ({
 			<div className={styles.contentArea}>
 				<div className={styles.companyInfoSection}>
 					<div className={styles.contentSection}>
+						<div className={styles.headText}>기업 정보</div>
 						<div className={styles.companyType}>
 							<Building2 />
 							<div className={styles.content}>
