@@ -1,0 +1,37 @@
+.container {
+	padding: 1.4rem;
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	border: 1px solid var(--color-gray-200);
+	border-radius: 10px;
+	gap: 0.6rem;
+}
+
+.topSection {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: start;
+}
+
+.name {
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.score {
+	font-size: 1.4em;
+	font-weight: bold;
+	color: var(--color-yellow-400);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.6rem;
+}
+
+.description {
+	color: var(--color-gray-600);
+}

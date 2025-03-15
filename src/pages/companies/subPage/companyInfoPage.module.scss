@@ -1,0 +1,63 @@
+.container {
+	margin: 1rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	gap: 1em;
+}
+
+.contentArea {
+	padding: 2rem 1.4rem;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	gap: 1.4rem;
+	border: 1px solid var(--color-gray-200);
+	border-radius: 10px;
+}
+
+.contentSection {
+	display: flex;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+.headText {
+	font-size: 1.6em;
+	font-weight: bold;
+}
+
+.companyType,
+.companyEmployee,
+.companyLocation,
+.homePage {
+	display: flex;
+	flex-direction: row;
+	justify-content: start;
+	align-items: center;
+	gap: 1em;
+}
+
+.content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: start;
+	gap: 0.4rem;
+}
+
+.content > :first-child {
+	font-weight: bold;
+}
+
+.companyDescriptionSection,
+.companyBenefitsSection {
+	display: flex;
+	flex-direction: column;
+	gap: 0.8rem;
+}
+
+.link {
+	color: var(--color-purple-900);
+}
