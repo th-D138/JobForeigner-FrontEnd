@@ -1,6 +1,6 @@
 import React from 'react';
 import { Building2, Calendar, ArrowUpRight } from 'lucide-react';
-import styles from './ApplicationHistory.module.scss';
+import styles from './applicationHistory.module.scss';
 
 interface Application {
   id: number;
