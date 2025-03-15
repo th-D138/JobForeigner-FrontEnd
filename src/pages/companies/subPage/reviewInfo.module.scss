@@ -1,0 +1,17 @@
+.container {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.titleText {
+	margin: 1.2rem 1rem 0.5rem 1rem;
+	font-size: 1.4em;
+	font-weight: bold;
+}
+
+.ratingInfoBoxContainer {
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+}
