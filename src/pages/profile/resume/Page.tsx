@@ -10,7 +10,7 @@ import { resumeSchema } from '@/lib/schemas/resumeSchema';
 import ExperienceInfo from '@/components/profile/resume/ExperienceInfo';
 import EducationInfo from '@/components/profile/resume/EducationInfo';
 import AwardsInfo from '@/components/profile/resume/AwardsInfo';
-import CertificatesInfo from '@/components/profile/resume/certificatesInfo';
+import CertificatesInfo from '@/components/profile/resume/CertificatesInfo';
 import LinkInfo from '@/components/profile/resume/LinkInfo';
 import IntroductionInfo from '@/components/profile/resume/IntroductionInfo';
 import FilesInfo from '@/components/profile/resume/FilesInfo';
