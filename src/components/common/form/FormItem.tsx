@@ -1,6 +1,6 @@
 import { forwardRef, useId } from 'react';
 import { FormFieldIdContext } from '@/lib/contexts/FormContext';
-import styles from './Form.module.scss';
+import styles from './form.module.scss';
 
 const FormItem = forwardRef<
   HTMLDivElement,
