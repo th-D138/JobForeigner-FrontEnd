@@ -15,26 +15,36 @@
   &:focus {
     box-shadow: 0 0 0 2px rgba(128, 90, 213, 0.3); /* 보라색 포커스 효과 */
   }
+
+  &.medium {
+    padding: 0.75rem 1.5rem; /* px-6 py-4 */
+    font-size: 1rem; /* text-base */
+  }
+
+  &.large {
+    padding: 1rem 2rem; /* px-8 py-6 */
+    font-size: 1.125rem; /* text-lg */
+  }
 }
 
 /* 기본(default) 스타일 */
 .default {
-  background-color: #6b46c1; /* bg-purple-600 */
+  background-color: var(--color-purple-600); /* bg-purple-600 */
   color: #fff;
   border: none;
 
   &:hover {
-    background-color: #553c9a; /* hover:bg-purple-700 */
+    background-color: var(--color-purple-700); /* hover:bg-purple-700 */
   }
 }
 
 /* 테두리(Outline) 스타일 */
 .outline {
-  background-color: transparent;
-  border: 1px solid #e5e7eb; /* border-gray-200 */
+  background-color: #fff;
+  border: 1px solid var(--color-gray-200); /* border-gray-200 */
   color: #111827; /* text-gray-900 */
 
   &:hover {
-    background-color: #f9fafb; /* hover:bg-gray-50 */
+    background-color: var(--color-gray-50); /* hover:bg-gray-50 */
   }
 }
