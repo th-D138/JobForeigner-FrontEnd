@@ -67,29 +67,31 @@ const navigation = [
 export default function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <div className={styles.header}>
-        <h2>프로필</h2>
+      <div>
+        <div className={styles.header}>
+          <h2>프로필</h2>
+        </div>
+        <nav className={styles.nav}>
+          {navigation.map(section => (
+            <SidebarItem
+              key={section.name}
+              icon={section.icon}
+              title={section.name}
+            >
+              {section.items.map(item => (
+                <SidebarItem.subItem
+                  key={item.name}
+                  name={item.name}
+                  href={item.href}
+                />
+              ))}
+            </SidebarItem>
+          ))}
+        </nav>
       </div>
-      <nav className={styles.nav}>
-        {navigation.map(section => (
-          <SidebarItem
-            key={section.name}
-            icon={section.icon}
-            title={section.name}
-          >
-            {section.items.map(item => (
-              <SidebarItem.subItem
-                key={item.name}
-                name={item.name}
-                href={item.href}
-              />
-            ))}
-          </SidebarItem>
-        ))}
-      </nav>
       <div className={styles.footer}>
         <div className={styles.footerLinks}>
-          <Link to="/profile/settings" className={styles.footerLink}>
+          <Link to='/profile/settings' className={styles.footerLink}>
             <Settings />
             설정
           </Link>

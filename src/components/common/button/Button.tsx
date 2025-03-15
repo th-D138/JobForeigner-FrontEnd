@@ -1,10 +1,13 @@
 import React from 'react';
-import styles from './Button.module.scss';
+import styles from './button.module.scss';
+import clsx from 'clsx';
 
 type ButtonVariant = 'default' | 'outline';
+type ButtonSize = 'small' | 'medium' | 'large';
 
 interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
+  size?: ButtonSize;
 }
 
 /**
@@ -13,16 +16,15 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
  */
 export default function Button({
   variant = 'default',
+  size = 'small',
   children,
   ...props
 }: ButtonProps) {
-  // variant에 따라 다른 스타일 적용
-  const className = `${styles.button} ${
-    variant === 'outline' ? styles.outline : styles.default
-  }`;
-
   return (
-    <button className={className} {...props}>
+    <button
+      className={clsx(styles.button, styles[variant], styles[size])}
+      {...props}
+    >
       {children}
     </button>
   );
