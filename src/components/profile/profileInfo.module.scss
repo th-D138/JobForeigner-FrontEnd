@@ -1,0 +1,57 @@
+$transition: 0.2s ease-in-out;
+
+.profileInfo {
+  flex: 1;
+}
+
+.profileTopRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.editButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 0.375rem;
+  background-color: transparent;
+  color: var(--color-gray-500);
+  font-size: 1rem;
+  transition: $transition;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-gray-50);
+  }
+}
+
+.profileName {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.profilePosition {
+  font-size: 1rem;
+  color: var(--color-gray-500);
+}
+
+.profileDetails {
+  margin-top: 1.125rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.profileDetailItem {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: var(--color-gray-500);
+}
+
+.profileDetailIcon {
+  width: 1rem;
+  height: 1rem;
+  margin-right: 0.5rem;
+}
