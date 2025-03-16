@@ -78,7 +78,16 @@ export default function ProfilePage() {
           </ResumeList>
         </section>
         <section>
-          <h2>지원 내역</h2>
+          <div className={styles.sectionHeader}>
+            <h2>지원 내역</h2>
+            <Link
+              to='/profile/applications'
+              className={styles.sectionHeaderRight}
+            >
+              더보기
+              <ChevronRight />
+            </Link>
+          </div>
           <ApplicationHistory applications={userInfo.applications} />
         </section>
       </main>
