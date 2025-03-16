@@ -12,7 +12,78 @@ export default function ResumeListPage() {
   const [searchTerm, setSearchTerm] = useState('');
 
   // 이력서 가짜 데이터
-  const resumes: Resume[] = [];
+  const resumes: Resume[] = [
+    {
+      id: 1,
+      title: '프론트엔드 개발자 이력서',
+      createdAt: '2024-03-10',
+      updatedAt: '2024-03-15',
+      status: 'completed',
+    },
+    {
+      id: 2,
+      title: '백엔드 개발자 이력서',
+      createdAt: '2024-02-05',
+      updatedAt: '2024-02-12',
+      status: 'progressing',
+    },
+    {
+      id: 3,
+      title: 'React 개발자 (경력) 이력서',
+      createdAt: '2024-01-20',
+      updatedAt: '2024-02-01',
+      status: 'completed',
+    },
+    {
+      id: 4,
+      title: '신입 개발자 이력서',
+      createdAt: '2024-02-28',
+      updatedAt: '2024-03-02',
+      status: 'completed',
+    },
+    {
+      id: 5,
+      title: '풀스택 개발자 이력서',
+      createdAt: '2024-03-01',
+      updatedAt: '2024-03-07',
+      status: 'progressing',
+    },
+    {
+      id: 6,
+      title: '외국계 기업 지원용 이력서(영문)',
+      createdAt: '2024-01-10',
+      updatedAt: '2024-01-15',
+      status: 'completed',
+    },
+    {
+      id: 7,
+      title: '디자인 직무 이력서',
+      createdAt: '2023-12-25',
+      updatedAt: '2024-01-01',
+      status: 'progressing',
+    },
+    {
+      id: 8,
+      title: 'PM/기획 직무 이력서',
+      createdAt: '2024-02-14',
+      updatedAt: '2024-02-18',
+      status: 'completed',
+    },
+    {
+      id: 9,
+      title: 'QA/테스터 직무 이력서',
+      createdAt: '2023-12-10',
+      updatedAt: '2023-12-12',
+      status: 'progressing',
+    },
+    {
+      id: 10,
+      title: 'AI 연구원 이력서',
+      createdAt: '2024-03-15',
+      updatedAt: '2024-03-15',
+      status: 'completed',
+    },
+  ];
 
   return (
     <div className={styles.pageContainer}>
