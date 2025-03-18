@@ -20,7 +20,7 @@ const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
 const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
 const NotFoundPage = lazy(() => import('./pages/notFound/Page'));
-
+const RegisterPage = lazy(() => import('./pages/register/Page'));
 // 각 페이지를 Suspense가 적용된 HOC로 감싸기
 const SuspensedMainPage = withSuspense(MainPage);
 const SuspensedProfilePage = withSuspense(ProfilePage);
@@ -30,7 +30,7 @@ const SuspensedCommunityPage = withSuspense(CommunityPage);
 const SuspensedCompaniesPage = withSuspense(CompaniesPage);
 const SuspensedDetailCompanyPage = withSuspense(DetailCompanyPage);
 const SuspensedNotFoundPage = withSuspense(NotFoundPage);
-
+const SuspensedRegisterPage = withSuspense(RegisterPage);
 export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
@@ -40,6 +40,7 @@ export const router = createBrowserRouter(
         <Route path='community' element={<SuspensedCommunityPage />} />
         <Route path='companies' element={<SuspensedCompaniesPage />} />
         <Route path='companies/:id' element={<SuspensedDetailCompanyPage />} />
+        <Route path='register' element={<SuspensedRegisterPage />} />
       </Route>
 
       {/* Sidebar가 포함된 라우트 */}
