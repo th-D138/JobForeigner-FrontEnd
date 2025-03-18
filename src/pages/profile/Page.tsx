@@ -2,6 +2,8 @@ import { UserProfile, ResumeList } from '@/components/profile';
 
 import styles from './page.module.scss';
 import { ApplicationHistory } from '@/components/profile/ApplicationHistory';
+import { ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const userInfo = {
   profileImageUrl: 'https://randomuser.me/api',
@@ -64,13 +66,28 @@ export default function ProfilePage() {
         <h1>프로필</h1>
         <UserProfile userInfo={userInfo} />
         <section>
-          <h2>내 이력서</h2>
+          <div className={styles.sectionHeader}>
+            <h2>내 이력서</h2>
+            <Link to='/profile/resume' className={styles.sectionHeaderRight}>
+              더보기
+              <ChevronRight />
+            </Link>
+          </div>
           <ResumeList resumes={userInfo.resumes}>
             <ResumeList.items resumes={userInfo.resumes} />
           </ResumeList>
         </section>
         <section>
-          <h2>지원 내역</h2>
+          <div className={styles.sectionHeader}>
+            <h2>지원 내역</h2>
+            <Link
+              to='/profile/applications'
+              className={styles.sectionHeaderRight}
+            >
+              더보기
+              <ChevronRight />
+            </Link>
+          </div>
           <ApplicationHistory applications={userInfo.applications} />
         </section>
       </main>

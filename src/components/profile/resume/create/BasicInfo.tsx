@@ -1,5 +1,5 @@
 import styles from './basicInfo.module.scss';
-import InputField from '../../common/field/InputField';
+import InputField from '../../../common/field/InputField';
 import Button from '@/components/common/button/Button';
 import { Camera } from 'lucide-react';
 import { useFormContext } from 'react-hook-form';
