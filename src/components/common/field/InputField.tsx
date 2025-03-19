@@ -14,7 +14,7 @@ type InputFieldProps = {
   control: Control<FieldValues, any>;
   name: string;
   label: string;
-  type?: 'text' | 'phone' | 'number' | 'date' | 'datetime-local';
+  type?: 'text' | 'password' | 'phone' | 'number' | 'date' | 'datetime-local';
   placeholder?: string;
   required?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
@@ -29,6 +29,7 @@ type InputFieldProps = {
  * - label: 필드 레이블
  * - type: 필드 타입 "text" | "phone" | "number" | "date" | "datetime-local"
  *   - text: 텍스트 입력 필드
+ *   - password: 비밀번호 입력 필드
  *   - phone: 전화번호 입력 필드
  *   - number: 숫자 입력 필드
  *   - date: 날짜 입력 필드

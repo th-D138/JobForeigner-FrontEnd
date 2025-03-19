@@ -45,6 +45,7 @@ export default function FirstSection({ setProgress }: Props) {
         control={control}
         name='password'
         label='비밀번호'
+        type='password'
         placeholder='비밀번호를 입력해주세요.'
         required={true}
       />
@@ -52,6 +53,7 @@ export default function FirstSection({ setProgress }: Props) {
         control={control}
         name='passwordConfirm'
         label='비밀번호 확인'
+        type='password'
         placeholder='비밀번호를 입력해주세요.'
         required={true}
       />
