@@ -1,4 +1,3 @@
-import { formatPhoneNumber } from '@/lib/utils/formatters';
 import FormField from '../form/FormField';
 import FormItem from '../form/FormItem';
 import FormLabel from '../form/FormLabel';
@@ -14,11 +13,25 @@ type InputFieldProps = {
   control: Control<FieldValues, any>;
   name: string;
   label: string;
-  type?: 'text' | 'phone' | 'number' | 'date' | 'datetime-local' | 'url';
+  type?: 'text' | 'url';
   placeholder?: string;
   required?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
+/**
+ * - React Hook Form URL 입력 필드 컴포넌트
+ *   - URL 입력 필드 타입 지원
+ *   - 필수 입력 칸 입니다. 메시지 표시 지원
+ * - control: 폼 제어 객체
+ * - name: 필드 이름
+ * - label: 필드 레이블
+ * - type: 필드 타입 "text" | "phone" | "number" | "date" | "datetime-local" | "url"
+ *   - text: 텍스트 입력 필드
+ *   - url: URL 입력 필드
+ * - placeholder: 필드 플레이스홀더
+ * - required: 필수 입력 여부
+ * - 나머지 props: (onChange, onKeyDown 등) InputHTMLAttributes(input 태그의 속성)
+ */
 const URLInputField = ({
   control,
   name,
@@ -32,12 +45,6 @@ const URLInputField = ({
     field: ControllerRenderProps<FieldValues, string>,
   ) => {
     const target = e.currentTarget;
-
-    if (type === 'phone') {
-      target.value = formatPhoneNumber(target.value);
-      field.onChange(target.value);
-      return;
-    }
 
     field.onChange(target.value);
   };
