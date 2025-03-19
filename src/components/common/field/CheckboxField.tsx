@@ -45,7 +45,6 @@ export default function CheckboxField({
       name={name}
       render={({ field }) => {
         const selectedValues = Array.isArray(field.value) ? field.value : [];
-        console.log(selectedValues);
         return (
           <FormItem>
             <FormLabel>
