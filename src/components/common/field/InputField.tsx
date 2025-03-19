@@ -9,6 +9,7 @@ import type {
   ControllerRenderProps,
   FieldValues,
 } from 'react-hook-form';
+import { forwardRef } from 'react';
 
 type InputFieldProps = {
   control: Control<FieldValues, any>;
@@ -18,6 +19,7 @@ type InputFieldProps = {
   placeholder?: string;
   icon?: string;
   required?: boolean;
+  ref?: React.RefObject<HTMLInputElement>;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
 /**
@@ -40,60 +42,66 @@ type InputFieldProps = {
  * - required: 필수 입력 여부
  * - 나머지 props: (onChange, onKeyDown 등) InputHTMLAttributes(input 태그의 속성)
  */
-const InputField = ({
-  control,
-  name,
-  label,
-  type = 'text',
-  placeholder = '필수 입력 칸 입니다.',
-  required = false,
-  icon,
-}: InputFieldProps) => {
-  const handleInput = (
-    e: React.FormEvent<HTMLInputElement>,
-    field: ControllerRenderProps<FieldValues, string>,
+const InputField = forwardRef<HTMLInputElement, InputFieldProps>(
+  (
+    {
+      control,
+      name,
+      label,
+      type = 'text',
+      placeholder = '필수 입력 칸 입니다.',
+      required = false,
+      icon,
+    }: InputFieldProps,
+    ref,
   ) => {
-    const target = e.currentTarget;
+    const handleInput = (
+      e: React.FormEvent<HTMLInputElement>,
+      field: ControllerRenderProps<FieldValues, string>,
+    ) => {
+      const target = e.currentTarget;
 
-    if (type === 'phone') {
-      target.value = formatPhoneNumber(target.value);
+      if (type === 'phone') {
+        target.value = formatPhoneNumber(target.value);
+        field.onChange(target.value);
+        return;
+      }
+
       field.onChange(target.value);
-      return;
-    }
+    };
 
-    field.onChange(target.value);
-  };
-
-  return (
-    <FormField
-      control={control}
-      name={name}
-      render={({ field }) => (
-        <FormItem>
-          <FormLabel>
-            {label} &nbsp;{' '}
-            {required && (
-              <span
-                aria-label='required'
-                style={{ color: 'var(--color-red-500)' }}
-              >
-                *
-              </span>
-            )}
-          </FormLabel>
-          <Input
-            {...field}
-            placeholder={placeholder}
-            onChange={e => handleInput(e, field)}
-            onKeyDown={e => e.key === 'Enter' && e.preventDefault()}
-            type={type}
-            icon={icon}
-          />
-          <FormMessage />
-        </FormItem>
-      )}
-    />
-  );
-};
+    return (
+      <FormField
+        control={control}
+        name={name}
+        render={({ field }) => (
+          <FormItem>
+            <FormLabel>
+              {label} &nbsp;{' '}
+              {required && (
+                <span
+                  aria-label='required'
+                  style={{ color: 'var(--color-red-500)' }}
+                >
+                  *
+                </span>
+              )}
+            </FormLabel>
+            <Input
+              {...field}
+              placeholder={placeholder}
+              onChange={e => handleInput(e, field)}
+              onKeyDown={e => e.key === 'Enter' && e.preventDefault()}
+              type={type}
+              icon={icon}
+              ref={ref}
+            />
+            <FormMessage />
+          </FormItem>
+        )}
+      />
+    );
+  },
+);
 
 export default InputField;
