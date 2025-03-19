@@ -16,6 +16,7 @@ type InputFieldProps = {
   label: string;
   type?: 'text' | 'password' | 'phone' | 'number' | 'date' | 'datetime-local';
   placeholder?: string;
+  icon?: string;
   required?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
@@ -35,6 +36,7 @@ type InputFieldProps = {
  *   - date: 날짜 입력 필드
  *   - datetime-local: 날짜 및 시간 입력 필드
  * - placeholder: 필드 플레이스홀더
+ * - icon: 필드 아이콘
  * - required: 필수 입력 여부
  * - 나머지 props: (onChange, onKeyDown 등) InputHTMLAttributes(input 태그의 속성)
  */
@@ -45,6 +47,7 @@ const InputField = ({
   type = 'text',
   placeholder = '필수 입력 칸 입니다.',
   required = false,
+  icon,
 }: InputFieldProps) => {
   const handleInput = (
     e: React.FormEvent<HTMLInputElement>,
@@ -84,6 +87,7 @@ const InputField = ({
             onChange={e => handleInput(e, field)}
             onKeyDown={e => e.key === 'Enter' && e.preventDefault()}
             type={type}
+            icon={icon}
           />
           <FormMessage />
         </FormItem>
