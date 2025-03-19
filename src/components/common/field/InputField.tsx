@@ -19,6 +19,24 @@ type InputFieldProps = {
   required?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
+/**
+ * - React Hook Form 일반 입력 필드 컴포넌트
+ *   - 텍스트, 전화번호, 숫자, 날짜, 시간 입력 필드 타입 지원
+ *   - 전화번호 입력 시 자동 포맷팅 지원
+ *   - 필수 입력 칸 입니다. 메시지 표시 지원
+ * - control: 폼 제어 객체
+ * - name: 필드 이름
+ * - label: 필드 레이블
+ * - type: 필드 타입 "text" | "phone" | "number" | "date" | "datetime-local"
+ *   - text: 텍스트 입력 필드
+ *   - phone: 전화번호 입력 필드
+ *   - number: 숫자 입력 필드
+ *   - date: 날짜 입력 필드
+ *   - datetime-local: 날짜 및 시간 입력 필드
+ * - placeholder: 필드 플레이스홀더
+ * - required: 필수 입력 여부
+ * - 나머지 props: (onChange, onKeyDown 등) InputHTMLAttributes(input 태그의 속성)
+ */
 const InputField = ({
   control,
   name,
