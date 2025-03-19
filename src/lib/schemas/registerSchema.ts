@@ -3,7 +3,7 @@ import { ERROR_MSG } from './error';
 import { REGEX } from './regex';
 
 export const registerSchema = z.object({
-  email: z.string().email(ERROR_MSG.required).max(50, ERROR_MSG.exceed.fifty),
+  email: z.string().email(ERROR_MSG.email).max(50, ERROR_MSG.exceed.fifty),
   password: z.string().min(8, ERROR_MSG.password.min),
   name: z.string().min(1, ERROR_MSG.required).max(30, ERROR_MSG.exceed.thirty),
   sex: z.string().min(1, ERROR_MSG.required),

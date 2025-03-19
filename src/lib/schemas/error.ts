@@ -14,5 +14,6 @@ export const ERROR_MSG = {
     twoThousand: '2000자 이내로 입력해주세요.',
     fiveThousand: '5000자 이내로 입력해주세요.',
   },
+  email: '올바른 이메일 형식을 입력해주세요.',
   phoneNumber: '올바른 전화번호를 입력해주세요.',
 };
