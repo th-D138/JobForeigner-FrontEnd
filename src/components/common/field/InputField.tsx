@@ -69,7 +69,10 @@ const InputField = ({
           <FormLabel>
             {label} &nbsp;{' '}
             {required && (
-              <span aria-label='required' style={{ color: '#ff7f00' }}>
+              <span
+                aria-label='required'
+                style={{ color: 'var(--color-red-500)' }}
+              >
                 *
               </span>
             )}

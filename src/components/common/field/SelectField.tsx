@@ -3,6 +3,7 @@ import FormField from '../form/FormField';
 import FormItem from '../form/FormItem';
 import FormLabel from '../form/FormLabel';
 import Select from '../select/Select';
+import FormMessage from '../form/FormMessage';
 
 type Props = {
   control: Control;
@@ -48,6 +49,7 @@ export default function SelectField({
               )}
             </FormLabel>
             <Select {...field} options={options} />
+            <FormMessage />
           </FormItem>
         );
       }}
