@@ -35,6 +35,10 @@
     > a {
       color: var(--color-purple-500);
       text-decoration: none;
+
+      &:hover {
+        color: var(--color-purple-400);
+      }
     }
   }
 }
