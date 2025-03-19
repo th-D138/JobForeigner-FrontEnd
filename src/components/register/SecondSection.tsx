@@ -4,9 +4,13 @@ import styles from './secondSection.module.scss';
 import InputField from '../common/field/InputField';
 import { useFormContext } from 'react-hook-form';
 import SelectField from '../common/field/SelectField';
-import { nationalityValues } from '@/lib/constants/registerSelectForm';
+import {
+  nationalityValues,
+  sexValues,
+} from '@/lib/constants/registerSelectForm';
 import Button from '../common/button/Button';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import RadioField from '../common/field/RadioField';
 
 interface Props {
   setProgress: Dispatch<SetStateAction<number>>;
@@ -47,7 +51,13 @@ export default function SecondSection({ setProgress }: Props) {
         placeholder='이름을 입력해주세요.'
         required={true}
       />
-      <InputField control={control} name='sex' label='성별' required={true} />
+      <RadioField
+        control={control}
+        name='sex'
+        label='성별'
+        required={true}
+        options={sexValues}
+      />
       <InputField
         control={control}
         name='phoneNumber'
