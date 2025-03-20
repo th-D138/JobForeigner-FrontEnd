@@ -55,7 +55,7 @@ export default function ApplicationsTabs({
       <button
         className={clsx(
           styles.tab,
-          selectedApplications.status === 'interviewing' && styles.active,
+          selectedApplications.status === 'interview' && styles.active,
         )}
         onClick={() =>
           setSelectedApplications({
