@@ -18,6 +18,7 @@
 - [react-hook-form](https://react-hook-form.com/get-started): 비제어 컴포넌트로 폼을 관리하여 성능을 최적화하기 위한 라이브러리
 - [zod](https://zod.dev/): 폼 입력값 유효성 검증 라이브러리 주로 react-hook-form과 함께 사용
 - [lucide-react](https://lucide.dev/icons/): 여러 아이콘을 쉽게 불러오기 위한 라이브러리
+- [Radix UI](https://www.radix-ui.com/): 고품질, 접근 가능한 디자인 시스템과 웹앱을 구축하는 데 사용하는 오픈소스 UI 컴포넌트 라이브러리
 - [react-dropzone](https://www.npmjs.com/package/react-dropzone): 파일 드롭다운을 구현하기 위한 라이브러리
 - [recharts.js](https://recharts.org/en-US/): 차트형식으로 UI로 보여주기 위한 라이브러리
 - [clsx](https://tensdiary.tistory.com/entry/React-clsx-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%9D%B4%EB%A6%84className%EC%9D%84-%EC%A1%B0%EA%B1%B4%EB%B6%80%EB%A1%9C-%EA%B2%B0%ED%95%A9-%EA%B4%80%EB%A6%AC): className을 여러 개 지정할 때 사용하는 라이브러리
