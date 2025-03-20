@@ -4,8 +4,8 @@ $transition: 0.2s ease-in-out;
   width: 17rem;
   background-color: #fff;
   border-right: 1px solid var(--color-gray-200);
-  height: 100vh;
   overflow-y: auto;
+  height: 100%;
   overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
@@ -59,35 +59,35 @@ $transition: 0.2s ease-in-out;
         margin-right: 0.75rem;
       }
     }
+  }
 
-    .subMenu {
-      margin-left: 2rem;
+  .subMenu {
+    margin-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    .subItem {
       display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
+      align-items: center;
+      width: 100%;
+      padding: 0.5rem 0.75rem;
+      font-size: 1rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      transition: $transition;
 
-      .subItem {
-        display: flex;
-        align-items: center;
-        width: 100%;
-        padding: 0.5rem 0.75rem;
-        font-size: 1rem;
-        border-radius: 0.375rem;
-        text-decoration: none;
-        transition: $transition;
+      &.active {
+        color: var(--color-violet-600);
+        background-color: var(--color-purple-100);
+      }
 
-        &.active {
+      &:not(.active) {
+        color: var(--color-gray-500);
+
+        &:hover {
+          background-color: var(--color-gray-50);
           color: var(--color-violet-600);
-          background-color: var(--color-purple-100);
-        }
-
-        &:not(.active) {
-          color: var(--color-gray-500);
-
-          &:hover {
-            background-color: var(--color-gray-50);
-            color: var(--color-violet-600);
-          }
         }
       }
     }

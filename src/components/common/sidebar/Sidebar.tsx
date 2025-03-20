@@ -29,9 +29,11 @@ function SidebarItem({ icon, title, children }: SidebarItemProps) {
 SidebarItem.subItem = ({ name, href }: SidebarItemSubItemProps) => (
   <NavLink
     to={href}
-    className={({ isActive }) =>
-      isActive ? clsx(styles.subItem, styles.active) : styles.subItem
-    }
+    className={({ isActive }) => {
+      return window.location.pathname === href && isActive
+        ? clsx(styles.subItem, styles.active)
+        : styles.subItem;
+    }}
   >
     {name}
   </NavLink>
@@ -41,25 +43,19 @@ const navigation = [
   {
     name: '이력서 관리',
     icon: <FileText />,
-    items: [
-      { name: '이력서 목록', href: '/mypage/resume' },
-      { name: '이력서 작성', href: '/mypage/resume/create' },
-    ],
+    items: [{ name: '이력서 목록', href: '/profile/resume' }],
   },
   {
     name: '지원 관리',
     icon: <Briefcase />,
-    items: [
-      { name: '지원 내역', href: '/mypage/applications' },
-      { name: '지원 현황', href: '/mypage/applications/status' },
-    ],
+    items: [{ name: '지원 내역', href: '/profile/applications' }],
   },
   {
     name: '기업 정보',
     icon: <Building2 />,
     items: [
-      { name: '기업 정보 수정', href: '/mypage/company/edit' },
-      { name: '기업 프로필 관리', href: '/mypage/company/profile' },
+      { name: '기업 프로필 관리', href: '/profile/company' },
+      { name: '기업 정보 수정', href: '/profile/company/edit' },
     ],
   },
 ];
@@ -72,6 +68,9 @@ export default function Sidebar() {
           <h2>프로필</h2>
         </div>
         <nav className={styles.nav}>
+          <div className={styles.subMenu}>
+            <SidebarItem.subItem name='프로필 관리' href='/profile' />
+          </div>
           {navigation.map(section => (
             <SidebarItem
               key={section.name}
