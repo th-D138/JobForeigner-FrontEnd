@@ -32,7 +32,7 @@ export default function Header() {
         <Link to='/login'>
           <Button variant='outline'>로그인</Button>
         </Link>
-        <Link to='/signUp'>
+        <Link to='/register'>
           <Button>회원가입</Button>
         </Link>
       </div>
