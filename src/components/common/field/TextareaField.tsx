@@ -13,6 +13,17 @@ type TextareaFieldProps = {
   required?: boolean;
 } & React.InputHTMLAttributes<HTMLInputElement>;
 
+/**
+ * - React Hook Form 텍스트 필드 컴포넌트
+ *   - 텍스트 필드 타입 지원
+ *   - 필수 입력 칸 입니다. 메시지 표시 지원
+ * - control: 폼 제어 객체
+ * - name: 필드 이름
+ * - label: 필드 레이블
+ * - placeholder: 필드 플레이스홀더
+ * - required: 필수 입력 여부
+ * - 나머지 props: (onChange, onKeyDown 등) InputHTMLAttributes(input 태그의 속성)
+ */
 const TextareaField = ({
   control,
   name,
@@ -29,7 +40,10 @@ const TextareaField = ({
           <FormLabel>
             {label} &nbsp;{' '}
             {required && (
-              <span aria-label='required' style={{ color: '#ff7f00' }}>
+              <span
+                aria-label='required'
+                style={{ color: 'var(--color-red-500)' }}
+              >
                 *
               </span>
             )}

@@ -1,0 +1,17 @@
+.container {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 1.75rem;
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+}
