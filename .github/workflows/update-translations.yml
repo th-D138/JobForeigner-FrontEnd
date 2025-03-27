@@ -22,7 +22,7 @@ jobs:
         run: npm install
 
       - name: Run translation generation script
-        run: node scripts/generateTranslations.js
+        run: node scripts/generateTranslations.ts
 
       - name: Commit updated translations
         run: |
