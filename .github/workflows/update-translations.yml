@@ -24,8 +24,13 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
+      # ts-node 전역 설치 (또는 devDependencies에 추가 후 pnpm install)
+      - name: Install ts-node
+        run: pnpm add -g ts-node typescript
+
+      # ts-node로 TypeScript 스크립트 실행
       - name: Run translation generation script
-        run: node scripts/generateTranslations.ts
+        run: ts-node scripts/generateTranslations.ts
 
       - name: Commit updated translations
         run: |
