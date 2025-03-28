@@ -1,0 +1,15 @@
+.radioGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.radioOption {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+
+  label {
+    cursor: pointer;
+  }
+}
