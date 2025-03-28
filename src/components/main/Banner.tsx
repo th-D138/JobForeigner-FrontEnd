@@ -12,10 +12,10 @@ export default function Banner() {
         <div className={styles.heroGrid}>
           <div className={styles.heroContent}>
             <h1 className={styles.heroTitle}>
-              {t('banner_title1')}{' '}
-              <span className={styles.highlight}>{t('banner_title2')}</span>
+              {t('mainBannerTitle1')}{' '}
+              <span className={styles.highlight}>{t('mainBannerTitle2')}</span>
             </h1>
-            <p className={styles.heroSubtitle}>{t('banner_subtitle')}</p>
+            <p className={styles.heroSubtitle}>{t('mainBannerSubtitle')}</p>
             <div className={styles.heroButtons}>
               <Link to='/jobs' className={`${styles.btn} ${styles.btnPrimary}`}>
                 {t('viewRecruitment')}

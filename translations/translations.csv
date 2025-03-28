@@ -1,8 +1,4 @@
 key,ko,en
-banner_title1,외국인을 위한,for foreigners
-banner_title2,채용 플랫폼,recruitment platform
-banner_subtitle,한국에서 일자리를 찾고 있는 외국인을 위한 맞춤형 취업 정보와 서비스를 제공합니다,It provides customized employment information and services for foreigners looking for a job in Korea
-viewRecruitment,채용정보 보기,View Recruitment
 signUp,회원가입,Sign up
 login,로그인,Login
 searchRecruitment,채용 공고 검색하기,Search for job postings
@@ -10,3 +6,7 @@ recruitmentInfo,채용정보,recruitment
 companiesInfo,기업정보,Companies
 nearBy,주변기업찾기,Surrounding
 community,커뮤니티,Community
+mainBannerTitle1,외국인을 위한,for foreigners
+mainBannerTitle2,채용 플랫폼,recruitment platform
+mainBannerSubtitle,한국에서 일자리를 찾고 있는 외국인을 위한 맞춤형 취업 정보와 서비스를 제공합니다,It provides customized employment information and services for foreigners looking for a job in Korea
+viewRecruitment,채용정보 보기,View Recruitment
