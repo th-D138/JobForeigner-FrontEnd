@@ -36,7 +36,7 @@ export default function Header() {
           <Button variant='outline'>{t('login')}</Button>
         </Link>
         <Link to='/register'>
-          <Button>{t('login')}</Button>
+          <Button>{t('signUp')}</Button>
         </Link>
       </div>
     </div>
