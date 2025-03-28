@@ -1,8 +1,8 @@
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
-import enCommon from '../public/locales/en/common.json';
-import koCommon from '../public/locales/ko/common.json';
+import enCommon from '../locales/en/common.json';
+import koCommon from '../locales/ko/common.json';
 
 const resources = {
   en: { common: enCommon },

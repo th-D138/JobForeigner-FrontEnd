@@ -1,0 +1,20 @@
+.wrapper {
+  position: absolute;
+  width: 80px;
+  left: -30px;
+  background-color: #fff;
+  border: 1px solid var(--color-gray-200);
+  border-radius: 5px;
+}
+
+.item {
+  width: 100%;
+  padding: 0.125rem;
+  font-size: 1rem;
+  text-align: center;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var(--color-gray-50);
+  }
+}

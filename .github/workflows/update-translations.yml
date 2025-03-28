@@ -24,10 +24,8 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      # 이제 scripts/generateTranslations.ts 실행 (로컬에 설치된 ts-node 사용)
-      - name: Run translation generation script
-        run: npx ts-node scripts/generateTranslations.ts
-        # 또는: run: pnpm exec ts-node scripts/generateTranslations.ts
+      - name: Generate translation JSON
+        run: pnpm exec ts-node --transpile-only scripts/generateTranslations.js
 
       - name: Commit updated translations
         run: |
