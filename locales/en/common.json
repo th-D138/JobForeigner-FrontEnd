@@ -7,5 +7,7 @@
   "login": "Login",
   "searchRecruitment": "Search for job postings",
   "recruitmentInfo": "recruitment",
-  "companiesInfo": "Companies"
+  "companiesInfo": "Companies",
+  "nearBy": "Surrounding",
+  "community": "Community"
 }

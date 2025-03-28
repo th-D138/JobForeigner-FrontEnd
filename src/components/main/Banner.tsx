@@ -18,14 +18,14 @@ export default function Banner() {
             <p className={styles.heroSubtitle}>{t('banner_subtitle')}</p>
             <div className={styles.heroButtons}>
               <Link to='/jobs' className={`${styles.btn} ${styles.btnPrimary}`}>
-                채용정보 보기
+                {t('viewRecruitment')}
                 <ChevronRight className={styles.btnIcon} />
               </Link>
               <Link
                 to='/register'
                 className={`${styles.btn} ${styles.btnSecondary}`}
               >
-                회원가입
+                {t('signUp')}
               </Link>
             </div>
           </div>

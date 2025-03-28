@@ -5,8 +5,11 @@ import SearchForm from './SearchForm';
 import LanguageButton from './LanguageButton';
 import Button from '../button/Button';
 import { title as Logo } from '@/lib/constants/serviceName';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
+  const { t } = useTranslation('common');
+
   return (
     <div className={styles.header}>
       <div className={styles.left}>
@@ -20,7 +23,7 @@ export default function Header() {
                 to={link}
                 className={({ isActive }) => (isActive ? styles.active : '')}
               >
-                {name}
+                {t(name)}
               </NavLink>
             </li>
           ))}
@@ -30,10 +33,10 @@ export default function Header() {
         <SearchForm />
         <LanguageButton />
         <Link to='/login'>
-          <Button variant='outline'>로그인</Button>
+          <Button variant='outline'>{t('login')}</Button>
         </Link>
         <Link to='/register'>
-          <Button>회원가입</Button>
+          <Button>{t('login')}</Button>
         </Link>
       </div>
     </div>
