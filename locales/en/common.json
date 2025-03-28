@@ -1,13 +1,13 @@
 {
-  "banner_title1": "for foreigners",
-  "banner_title2": "recruitment platform",
-  "banner_subtitle": "It provides customized employment information and services for foreigners looking for a job in Korea",
-  "viewRecruitment": "View Recruitment",
   "signUp": "Sign up",
   "login": "Login",
   "searchRecruitment": "Search for job postings",
   "recruitmentInfo": "recruitment",
   "companiesInfo": "Companies",
   "nearBy": "Surrounding",
-  "community": "Community"
+  "community": "Community",
+  "mainBannerTitle1": "For foreigners",
+  "mainBannerTitle2": "recruitment platform",
+  "mainBannerSubtitle": "It provides customized employment information and services for foreigners looking for a job in Korea",
+  "viewRecruitment": "View Recruitment"
 }
