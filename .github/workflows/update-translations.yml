@@ -31,5 +31,5 @@ jobs:
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add public/locales
+          git add locales
           git diff --cached --quiet || (git commit -m "chore: update translations" && git push)
