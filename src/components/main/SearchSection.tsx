@@ -1,16 +1,17 @@
+import { useTranslation } from 'react-i18next';
 import styles from './searchSection.module.scss';
 import SearchSectionForm from './SearchSectionForm';
 
 export default function SearchSection() {
+  const { t } = useTranslation('mainPage');
+
   return (
     <section className={styles.searchSection}>
       <div className={styles.container}>
         <div className={styles.searchWrapper}>
           <div className={styles.searchHeader}>
-            <h2 className={styles.sectionTitle}>원하는 일자리를 찾아보세요</h2>
-            <p className={styles.sectionSubtitle}>
-              키워드, 지역, 직종 등으로 맞춤형 채용정보를 검색할 수 있습니다.
-            </p>
+            <h2 className={styles.sectionTitle}>{t('searchTitle')}</h2>
+            <p className={styles.sectionSubtitle}>{t('searchSubTitle')}</p>
             <SearchSectionForm />
           </div>
         </div>
