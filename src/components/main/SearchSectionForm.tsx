@@ -1,3 +1,4 @@
+import { useTranslation } from 'react-i18next';
 import Input from '../common/input/Input';
 import Select from '../common/select/Select';
 import styles from './searchSectionForm.module.scss';
@@ -23,18 +24,20 @@ const selectOptions = [
 ];
 
 export default function SearchSectionForm() {
+  const { t } = useTranslation('mainPage');
+
   return (
     <form className={styles.searchBox}>
       <div className={styles.searchBoxRow}>
         <Input
           type='text'
           name='search'
-          placeholder='직무, 회사명, 키워드'
+          placeholder={t('placeholder')}
           icon='search'
         />
         <Select name='region' icon='map-pin' options={selectOptions} />
         <button type='submit' className={styles.searchButton}>
-          검색
+          {t('searchButton')}
         </button>
       </div>
     </form>

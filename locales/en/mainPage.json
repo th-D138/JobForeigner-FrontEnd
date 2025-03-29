@@ -4,5 +4,10 @@
   "mainBannerSubtitle": "It provides customized employment information and services for foreigners looking for a job in Korea",
   "viewRecruitment": "View Recruitment",
   "searchTitle": "Find the job you want",
-  "searchSubTitle": "You can search for customized recruitment information by keyword, region, occupation, etc."
+  "searchSubTitle": "You can search for customized recruitment information by keyword, region, occupation, etc.",
+  "placeholder": "Job, company name, keyword",
+  "searchButton": "search",
+  "popularRecruitmentTitle": " Popular recruitment field",
+  "popularRecruitmentSubTitle": "Check out recruitment information in various industries",
+  "allCategory": "All fields"
 }
