@@ -59,7 +59,6 @@ const DetailInfoBox = ({
       <div className={styles.buttons}>
         <div>관심기업 등록</div>
         <div>리뷰 보기</div>
-        <div>스크랩하기</div>
       </div>
     </div>
   );
