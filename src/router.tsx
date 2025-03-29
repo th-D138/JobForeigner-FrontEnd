@@ -9,6 +9,10 @@ import Layout from './components/layout/Layout';
 // 만든 HOC 임포트
 import withSuspense from '@/pages/withSuspense';
 import LayoutWithSidebar from './components/layout/LayoutWithSidebar';
+import {
+  companySidebarNavItems,
+  userSidebarNavItems,
+} from './lib/constants/navItems';
 
 const MainPage = lazy(() => import('./pages/main/Page'));
 const ProfilePage = lazy(() => import('./pages/profile/Page'));
@@ -19,6 +23,7 @@ const CreateResumePage = lazy(
 const ApplicationsPage = lazy(
   () => import('./pages/profile/applications/Page'),
 );
+const CompanyProfilePage = lazy(() => import('./pages/profile/company/Page'));
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
 const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
@@ -31,6 +36,7 @@ const SuspensedMainPage = withSuspense(MainPage);
 const SuspensedProfilePage = withSuspense(ProfilePage);
 const SuspensedResumeListPage = withSuspense(ResumeListPage);
 const SuspensedCreateResumePage = withSuspense(CreateResumePage);
+const SuspensedCompanyProfilePage = withSuspense(CompanyProfilePage);
 const SuspensedCommunityPage = withSuspense(CommunityPage);
 const SuspensedCompaniesPage = withSuspense(CompaniesPage);
 const SuspensedDetailCompanyPage = withSuspense(DetailCompanyPage);
@@ -52,8 +58,11 @@ export const router = createBrowserRouter(
         <Route path='login' element={<SuspensedLoginPage />} />
       </Route>
 
-      {/* Sidebar가 포함된 라우트 */}
-      <Route path='/' element={<LayoutWithSidebar />}>
+      {/* 유저 프로필 관련 라우트 */}
+      <Route
+        path='/'
+        element={<LayoutWithSidebar navItems={userSidebarNavItems} />}
+      >
         <Route path='profile' element={<SuspensedProfilePage />} />
         <Route path='profile/resume' element={<SuspensedResumeListPage />} />
         <Route
@@ -64,6 +73,14 @@ export const router = createBrowserRouter(
           path='profile/applications'
           element={<SuspensedApplicationsPage />}
         />
+      </Route>
+
+      {/* 기업 프로필 관련 라우트 */}
+      <Route
+        path='/profile/company'
+        element={<LayoutWithSidebar navItems={companySidebarNavItems} />}
+      >
+        <Route index element={<SuspensedCompanyProfilePage />} />
       </Route>
 
       {/* Layout이 적용되지 않는 라우트 */}
