@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Star } from 'lucide-react';
 
-interface RecruitInfo {
+export interface RecruitInfoType {
   id: number;
   title: string;
   company: string;
@@ -23,7 +23,7 @@ const RecruitBar = ({
   date,
   rate,
   recruitType,
-}: RecruitInfo) => {
+}: RecruitInfoType) => {
   const [isScraped, setIsScraped] = useState(false);
   const handleScrap = () => {
     setIsScraped(!isScraped);

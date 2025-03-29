@@ -16,6 +16,7 @@ const CreateResumePage = lazy(() => import('./pages/profile/resume/Page'));
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
 const RecruitPage = lazy(() => import('./pages/jobs/Page'));
+const DetailRecuitPage = lazy(() => import('./pages/jobs/DetailPage'));
 const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
 const NotFoundPage = lazy(() => import('./pages/notFound/Page'));
 
@@ -26,6 +27,7 @@ const SuspensedCreateResumePage = withSuspense(CreateResumePage);
 const SuspensedCommunityPage = withSuspense(CommunityPage);
 const SuspensedCompaniesPage = withSuspense(CompaniesPage);
 const SuspensedRecruitPage = withSuspense(RecruitPage);
+const SuspensedDetailRecuitPage = withSuspense(DetailRecuitPage);
 const SuspensedDetailCompanyPage = withSuspense(DetailCompanyPage);
 const SuspensedNotFoundPage = withSuspense(NotFoundPage);
 
@@ -39,6 +41,7 @@ export const router = createBrowserRouter(
         <Route path='companies' element={<SuspensedCompaniesPage />} />
         <Route path='companies/:id' element={<SuspensedDetailCompanyPage />} />
         <Route path='jobs' element={<SuspensedRecruitPage />} />
+        <Route path='jobs/:id' element={<SuspensedDetailRecuitPage />} />
       </Route>
 
       {/* Sidebar가 포함된 라우트 */}
