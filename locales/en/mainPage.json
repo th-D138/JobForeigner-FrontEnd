@@ -9,5 +9,11 @@
   "searchButton": "search",
   "popularRecruitmentTitle": " Popular recruitment field",
   "popularRecruitmentSubTitle": "Check out recruitment information in various industries",
-  "allCategory": "All fields"
+  "allCategory": "All fields",
+  "it-dev": "IT/Developer",
+  "service": "service",
+  "manufacturing": "manufacturing",
+  "education": "education",
+  "office": "Office",
+  "sales": "Sales"
 }

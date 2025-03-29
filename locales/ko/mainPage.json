@@ -9,5 +9,11 @@
   "searchButton": "검색",
   "popularRecruitmentTitle": "인기 채용 분야",
   "popularRecruitmentSubTitle": "다양한 산업 분야의 채용 정보를 확인하세요",
-  "allCategory": "모든 카테고리"
+  "allCategory": "모든 카테고리",
+  "it-dev": "IT/개발",
+  "service": "서비스업",
+  "manufacturing": "제조/생산",
+  "education": "교육",
+  "office": "사무/관리",
+  "sales": "영업/마케팅"
 }
