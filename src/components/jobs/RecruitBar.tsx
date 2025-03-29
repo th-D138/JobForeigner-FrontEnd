@@ -25,9 +25,15 @@ const RecruitBar = ({
   recruitType,
 }: RecruitInfo) => {
   const [isScraped, setIsScraped] = useState(false);
+  const handleScrap = () => {
+    setIsScraped(!isScraped);
+  };
 
   return (
     <div className={styles.container}>
+      <div onClick={handleScrap}>
+        <Star className={isScraped ? styles.scraped : styles.noscraped} />
+      </div>
       <Link
         to={`/jobs/${id}`}
         className={styles.recruitBar}
@@ -42,9 +48,6 @@ const RecruitBar = ({
           recruitType,
         }}
       >
-        <div>
-          <Star className={isScraped ? styles.scraped : styles.noscraped} />
-        </div>
         <div>{title}</div>
         <div>{company}</div>
         <div>{location}</div>
