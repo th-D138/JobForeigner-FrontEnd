@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import { RecruitInfoType } from '@/components/jobs/RecruitBar';
 import AdvertiseRecruitBox from '@/components/jobs/AdvertiseRecruitBox';
+import RecruitContent from '@/components/jobs/RecruitContent';
 
 const DetailPage = () => {
   const location = useLocation();
@@ -12,6 +13,7 @@ const DetailPage = () => {
     <div className={styles.container}>
       <DetailInfoBox {...data} />
       <AdvertiseRecruitBox />
+      <RecruitContent />
     </div>
   );
 };
