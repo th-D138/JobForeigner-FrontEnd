@@ -8,7 +8,7 @@ type ApplyProps = {
 const ApplyTab = ({ recruitId }: ApplyProps) => {
   const navigate = useNavigate();
   const handleApply = () => {
-    navigate('/resumes', { state: { recruitId } });
+    navigate('/select-resume', { state: { recruitId } });
   };
   return (
     <div className={styles.container}>
