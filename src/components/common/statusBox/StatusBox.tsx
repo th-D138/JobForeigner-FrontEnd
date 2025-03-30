@@ -7,6 +7,8 @@ const statusClassName: Record<string, string> = {
   '서류 검토중': 'reviewing',
   '면접 예정': 'interview',
   완료: 'accepted',
+  '등록한 채용공고': 'postingRecruitment',
+  '진행중인 채용': 'ongoingRecruitment',
 };
 
 type StatusBoxProps = {

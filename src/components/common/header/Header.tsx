@@ -1,6 +1,6 @@
 import { Link, NavLink } from 'react-router-dom';
 import styles from './header.module.scss';
-import { navItems } from '@/lib/constants/navItems';
+import { headerNavItems } from '@/lib/constants/navItems';
 import SearchForm from './SearchForm';
 import LanguageButton from './LanguageButton';
 import Button from '../button/Button';
@@ -17,7 +17,7 @@ export default function Header() {
           <Link to='/'>{Logo}</Link>
         </div>
         <ul className={styles.nav}>
-          {navItems.map(({ id, name, link }) => (
+          {headerNavItems.map(({ id, name, link }) => (
             <li key={id}>
               <NavLink
                 to={link}
