@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './page.module.scss';
-import StatusBox from '@/components/profile/applications/StatusBox';
+import StatusBox from '@/components/common/statusBox/StatusBox';
 import { Application } from '@/lib/type/profile/application';
 import ApplicationsTabs from '@/components/profile/applications/ApplicationsTabs';
 import ApplicationInfo from '@/components/profile/applications/ApplicationInfo';
