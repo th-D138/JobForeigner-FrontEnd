@@ -30,7 +30,7 @@ export default function CompanyProfilePage() {
           <Link to='/profile/company/edit'>
             <Button size='medium'>
               <span className={styles.buttonContent}>
-                <PenSquare className={styles.buttonIcon} />
+                <PenSquare />
                 정보 수정
               </span>
             </Button>
