@@ -3,28 +3,12 @@ import InputField from '../../../common/field/InputField';
 import Button from '@/components/common/button/Button';
 import { Camera } from 'lucide-react';
 import { useFormContext } from 'react-hook-form';
-import { useRef, useState } from 'react';
+import useImageUpload from '@/lib/hooks/useImageUpload';
 
 export default function BasicInfo() {
   const { control, setValue } = useFormContext();
-  const [image, setImage] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImage(reader.result as string);
-        setValue('photo', file);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleUploadClick = () => {
-    fileInputRef.current?.click();
-  };
+  const { image, fileInputRef, handleImageUpload, handleUploadClick } =
+    useImageUpload(setValue);
 
   return (
     <div className={styles.container}>

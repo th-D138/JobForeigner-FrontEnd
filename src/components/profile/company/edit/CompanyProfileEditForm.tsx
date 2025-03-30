@@ -5,7 +5,7 @@ import SelectField from '@/components/common/field/SelectField';
 import TextareaField from '@/components/common/field/TextareaField';
 import Button from '@/components/common/button/Button';
 import { Camera, Save } from 'lucide-react';
-import { useRef, useState } from 'react';
+import useImageUpload from '@/lib/hooks/useImageUpload';
 
 const industryItems = [
   {
@@ -44,25 +44,8 @@ const industryItems = [
 
 export default function CompanyProfileEditForm() {
   const { control, setValue } = useFormContext();
-
-  const [image, setImage] = useState<string | null>(null);
-  const fileInputRef = useRef<HTMLInputElement>(null);
-
-  const handleImageUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const file = event.target.files?.[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => {
-        setImage(reader.result as string);
-        setValue('logo', file);
-      };
-      reader.readAsDataURL(file);
-    }
-  };
-
-  const handleUploadClick = () => {
-    fileInputRef.current?.click();
-  };
+  const { image, fileInputRef, handleImageUpload, handleUploadClick } =
+    useImageUpload(setValue);
 
   return (
     <div className={styles.formWrapper}>
