@@ -3,6 +3,7 @@ import styles from './page.module.scss';
 import { Briefcase, Clock, PenSquare } from 'lucide-react';
 import CompanyInfo from '@/components/profile/company/CompanyInfo';
 import StatusBox from '@/components/common/statusBox/StatusBox';
+import { Link } from 'react-router-dom';
 
 const companyData = {
   name: '테크 솔루션즈',
@@ -26,12 +27,14 @@ export default function CompanyProfilePage() {
       <main className={styles.page}>
         <div className={styles.title}>
           <h1>기업 정보</h1>
-          <Button size='medium'>
-            <span className={styles.buttonContent}>
-              <PenSquare className={styles.buttonIcon} />
-              정보 수정
-            </span>
-          </Button>
+          <Link to='/profile/company/edit'>
+            <Button size='medium'>
+              <span className={styles.buttonContent}>
+                <PenSquare className={styles.buttonIcon} />
+                정보 수정
+              </span>
+            </Button>
+          </Link>
         </div>
         <section>
           <h2>기본 정보</h2>
