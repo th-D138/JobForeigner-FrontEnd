@@ -59,7 +59,7 @@ export default function ApplicationsTabs({
         )}
         onClick={() =>
           setSelectedApplications({
-            status: 'interviewing',
+            status: 'interview',
             applications: interviewing,
           })
         }

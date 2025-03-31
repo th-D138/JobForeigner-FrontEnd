@@ -138,21 +138,25 @@ export default function ApplicationsPage() {
     {
       id: 1,
       title: '전체 지원',
+      color: 'var(--color-purple-600)',
       number: applications.length,
     },
     {
       id: 2,
       title: '서류 검토중',
+      color: 'var(--color-blue-600)',
       number: reviewing.length,
     },
     {
       id: 3,
       title: '면접 예정',
+      color: 'var(--color-green-600)',
       number: interviewing.length,
     },
     {
       id: 4,
       title: '완료',
+      color: 'var(--color-green-600)',
       number: accepted.length,
     },
   ];
@@ -168,6 +172,7 @@ export default function ApplicationsPage() {
           {statusBoxes.map(statusBox => (
             <StatusBox
               icon={getIcon(statusBox.title)}
+              iconColor={statusBox.color}
               key={statusBox.id}
               {...statusBox}
             />
