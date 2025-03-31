@@ -13,7 +13,7 @@ const recruitments = [
     employmentType: '정규직',
     createdAt: '2021-08-01',
     expiresAt: '2021-08-31',
-    status: '진행중',
+    status: 'active',
     applicantsCount: 0,
     viewCount: 0,
   },
@@ -24,7 +24,7 @@ const recruitments = [
     employmentType: '정규직',
     createdAt: '2021-08-01',
     expiresAt: '2021-08-31',
-    status: '마감',
+    status: 'expired',
     applicantsCount: 0,
     viewCount: 0,
   },
@@ -35,7 +35,7 @@ const recruitments = [
     employmentType: '정규직',
     createdAt: '2021-08-01',
     expiresAt: '2021-08-31',
-    status: '마감',
+    status: 'expired',
     applicantsCount: 0,
     viewCount: 0,
   },
@@ -47,7 +47,7 @@ export default function CompanyProfileRecruitmentPage() {
       <main className={styles.page}>
         <div className={styles.title}>
           <h1>채용 공고 관리</h1>
-          <Link to='/profile/company/edit'>
+          <Link to='/write-recruitment'>
             <Button size='medium'>
               <span className={styles.buttonContent}>
                 <Plus />새 공고 작성
@@ -82,9 +82,24 @@ export default function CompanyProfileRecruitmentPage() {
           />
         </div>
         <div className={styles.recruitments}>
-          {recruitments.map(recruitment => (
-            <RecruitmentCard key={recruitment.id} recruitment={recruitment} />
-          ))}
+          {recruitments.length > 0 ? (
+            recruitments.map(recruitment => (
+              <RecruitmentCard key={recruitment.id} recruitment={recruitment} />
+            ))
+          ) : (
+            <div className={styles.emptyState}>
+              <Building2 className={styles.buildingIcon} />
+              <h3 className={styles.emptyTitle}>등록된 채용 공고가 없습니다</h3>
+              <p className={styles.emptyDescription}>
+                새 채용 공고를 작성해보세요.
+              </p>
+              <Link to='/write-recruitment'>
+                <Button>
+                  <Plus className={styles.plusIcon} />새 공고 작성
+                </Button>
+              </Link>
+            </div>
+          )}
         </div>
       </main>
     </div>
