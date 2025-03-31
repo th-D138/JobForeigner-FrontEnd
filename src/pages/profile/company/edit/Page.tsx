@@ -4,6 +4,8 @@ import Button from '@/components/common/button/Button';
 import { ArrowLeft } from 'lucide-react';
 import { FormProvider, useForm } from 'react-hook-form';
 import CompanyProfileEditForm from '@/components/profile/company/edit/CompanyProfileEditForm';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { companyProfileEditSchema } from '@/lib/schemas/companyProfileEditSchema';
 
 const defaultValues = {
   logo: null,
@@ -24,6 +26,7 @@ export default function CompanyProfileEditPage() {
   const navigation = useNavigate();
   const formState = useForm({
     defaultValues,
+    resolver: zodResolver(companyProfileEditSchema),
   });
 
   const onSubmit = async (data: unknown) => {
