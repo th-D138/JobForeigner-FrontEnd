@@ -24,6 +24,9 @@ const ApplicationsPage = lazy(
   () => import('./pages/profile/applications/Page'),
 );
 const CompanyProfilePage = lazy(() => import('./pages/profile/company/Page'));
+const CompanyProfileEditPage = lazy(
+  () => import('./pages/profile/company/edit/Page'),
+);
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
 const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
@@ -37,6 +40,7 @@ const SuspensedProfilePage = withSuspense(ProfilePage);
 const SuspensedResumeListPage = withSuspense(ResumeListPage);
 const SuspensedCreateResumePage = withSuspense(CreateResumePage);
 const SuspensedCompanyProfilePage = withSuspense(CompanyProfilePage);
+const SuspensedCompanyProfileEditPage = withSuspense(CompanyProfileEditPage);
 const SuspensedCommunityPage = withSuspense(CommunityPage);
 const SuspensedCompaniesPage = withSuspense(CompaniesPage);
 const SuspensedDetailCompanyPage = withSuspense(DetailCompanyPage);
@@ -81,6 +85,7 @@ export const router = createBrowserRouter(
         element={<LayoutWithSidebar navItems={companySidebarNavItems} />}
       >
         <Route index element={<SuspensedCompanyProfilePage />} />
+        <Route path='edit' element={<SuspensedCompanyProfileEditPage />} />
       </Route>
 
       {/* Layout이 적용되지 않는 라우트 */}
