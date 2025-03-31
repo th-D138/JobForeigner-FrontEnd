@@ -105,8 +105,18 @@ export default function CompanyProfileEditForm() {
         />
       </div>
       <div className={styles.twoRow}>
-        <InputField control={control} name='foundedYear' label='설립연도' />
-        <InputField control={control} name='employeeCount' label='직원수' />
+        <InputField
+          control={control}
+          name='foundedYear'
+          label='설립연도'
+          placeholder='2025'
+        />
+        <InputField
+          control={control}
+          name='employeeCount'
+          label='직원수'
+          placeholder='100'
+        />
       </div>
       <InputField
         control={control}
@@ -117,6 +127,7 @@ export default function CompanyProfileEditForm() {
       <div className={styles.twoRow}>
         <InputField
           control={control}
+          type='phone'
           name='phone'
           label='연락처'
           required={true}
@@ -128,8 +139,18 @@ export default function CompanyProfileEditForm() {
           required={true}
         />
       </div>
-      <InputField control={control} name='website' label='웹사이트' />
-      <TextareaField control={control} name='description' label='회사 소개' />
+      <InputField
+        control={control}
+        name='website'
+        label='웹사이트'
+        placeholder='https://'
+      />
+      <TextareaField
+        control={control}
+        name='description'
+        label='회사 소개'
+        placeholder='회사에 대한 간단한 소개를 작성해주세요.'
+      />
       <div className={styles.actions}>
         <Button size='medium'>
           <span className={styles.buttonText}>
