@@ -19,6 +19,8 @@ const RecruitPage = lazy(() => import('./pages/jobs/Page'));
 const DetailRecuitPage = lazy(() => import('./pages/jobs/DetailPage'));
 const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
 const SelectResumePage = lazy(() => import('./pages/jobs/SelectResume'));
+const ApplySucessedPage = lazy(() => import('./pages/jobs/ApplySucessed'));
+const ApplyFailedPage = lazy(() => import('./pages/jobs/ApplyFailed'));
 const NotFoundPage = lazy(() => import('./pages/notFound/Page'));
 
 // 각 페이지를 Suspense가 적용된 HOC로 감싸기
@@ -31,6 +33,8 @@ const SuspensedRecruitPage = withSuspense(RecruitPage);
 const SuspensedDetailRecuitPage = withSuspense(DetailRecuitPage);
 const SuspensedDetailCompanyPage = withSuspense(DetailCompanyPage);
 const SuspensedSelectResumePage = withSuspense(SelectResumePage);
+const SuspensedApplySucessedPage = withSuspense(ApplySucessedPage);
+const SuspensedApplyFailPage = withSuspense(ApplyFailedPage);
 const SuspensedNotFoundPage = withSuspense(NotFoundPage);
 
 export const router = createBrowserRouter(
@@ -45,6 +49,8 @@ export const router = createBrowserRouter(
         <Route path='jobs' element={<SuspensedRecruitPage />} />
         <Route path='jobs/:id' element={<SuspensedDetailRecuitPage />} />
         <Route path='select-resume' element={<SuspensedSelectResumePage />} />
+        <Route path='apply-sucess' element={<SuspensedApplySucessedPage />} />
+        <Route path='apply-fail' element={<SuspensedApplyFailPage />} />
       </Route>
 
       {/* Sidebar가 포함된 라우트 */}

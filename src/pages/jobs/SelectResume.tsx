@@ -35,7 +35,7 @@ const SelectResume = () => {
   };
 
   const handleApply = (id: IdType) => {
-    navigator('/apply', { state: { id: id } });
+    navigator('/apply-sucess', { state: { id: id } });
   };
   return (
     <div className={styles.container}>
