@@ -1,0 +1,131 @@
+.applicationInfo {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.applicationInfoHeader {
+  display: flex;
+  gap: 1rem;
+}
+
+.applicationInfoImage {
+  width: 4rem;
+  height: 4rem;
+  background-color: var(--color-gray-100);
+  border-radius: 0.5rem;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+.applicationInfoHeaderText {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.applicationInfoHeaderTitle {
+  font-size: 1.375rem;
+  font-weight: 600;
+  color: var(--color-gray-900);
+}
+
+.applicationInfoHeaderCompany {
+  font-size: 1.0625rem;
+  color: var(--color-gray-500);
+}
+
+.applicationInfoHeaderDescription {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+  color: var(--color-gray-500);
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+    color: var(--color-gray-500);
+  }
+}
+
+.applicationInfoStatus {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.tag {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  background-color: var(--color-gray-100);
+  font-size: 0.875rem;
+  font-weight: 700;
+
+  svg {
+    width: 1rem;
+    height: 1rem;
+  }
+
+  &.reviewing {
+    background-color: var(--color-blue-100);
+    color: var(--color-blue-800);
+  }
+
+  &.interview {
+    background-color: var(--color-yellow-100);
+    color: var(--color-yellow-800);
+  }
+
+  &.accepted {
+    background-color: var(--color-green-100);
+    color: var(--color-green-800);
+  }
+
+  &.rejected {
+    background-color: var(--color-red-100);
+    color: var(--color-red-800);
+  }
+}
+
+.applicationInfoDivider {
+  border: none;
+  border-top: 1px solid var(--color-gray-200);
+}
+
+.applicationInfoActions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.buttonItem {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+
+  &.cancel {
+    color: var(--color-red-600);
+  }
+
+  svg {
+    width: 1.375rem;
+    height: 1.375rem;
+  }
+}

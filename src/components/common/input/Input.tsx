@@ -1,4 +1,4 @@
-import { MapPin, Search } from 'lucide-react';
+import { Mail, MapPin, Search, Lock } from 'lucide-react';
 import styles from './input.module.scss';
 import clsx from 'clsx';
 import { forwardRef } from 'react';
@@ -9,6 +9,10 @@ const getIcon = (icon?: string) => {
       return <Search className={styles.icon} />;
     case 'map-pin':
       return <MapPin className={styles.icon} />;
+    case 'email':
+      return <Mail className={styles.icon} />;
+    case 'password':
+      return <Lock className={styles.icon} />;
     default:
       return null;
   }

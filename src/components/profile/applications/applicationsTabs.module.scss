@@ -1,0 +1,14 @@
+.tab {
+  border: none;
+  border-radius: 0.5rem;
+  background-color: none;
+  padding: 0.5rem 0.625rem;
+  font-size: 1.0625rem;
+  font-weight: 500;
+  color: var(--color-gray-900);
+  cursor: pointer;
+
+  &.active {
+    background-color: #fff;
+  }
+}

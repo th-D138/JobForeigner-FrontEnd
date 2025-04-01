@@ -1,12 +1,15 @@
 import { Link, NavLink } from 'react-router-dom';
 import styles from './header.module.scss';
-import { navItems } from '@/lib/constants/navItems';
+import { headerNavItems } from '@/lib/constants/navItems';
 import SearchForm from './SearchForm';
 import LanguageButton from './LanguageButton';
 import Button from '../button/Button';
 import { title as Logo } from '@/lib/constants/serviceName';
+import { useTranslation } from 'react-i18next';
 
 export default function Header() {
+  const { t } = useTranslation('common');
+
   return (
     <div className={styles.header}>
       <div className={styles.left}>
@@ -14,13 +17,13 @@ export default function Header() {
           <Link to='/'>{Logo}</Link>
         </div>
         <ul className={styles.nav}>
-          {navItems.map(({ id, name, link }) => (
+          {headerNavItems.map(({ id, name, link }) => (
             <li key={id}>
               <NavLink
                 to={link}
                 className={({ isActive }) => (isActive ? styles.active : '')}
               >
-                {name}
+                {t(name)}
               </NavLink>
             </li>
           ))}
@@ -30,10 +33,10 @@ export default function Header() {
         <SearchForm />
         <LanguageButton />
         <Link to='/login'>
-          <Button variant='outline'>로그인</Button>
+          <Button variant='outline'>{t('login')}</Button>
         </Link>
-        <Link to='/signUp'>
-          <Button>회원가입</Button>
+        <Link to='/register'>
+          <Button>{t('signUp')}</Button>
         </Link>
       </div>
     </div>
