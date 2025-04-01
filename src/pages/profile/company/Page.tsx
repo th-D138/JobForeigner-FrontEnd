@@ -42,8 +42,18 @@ export default function CompanyProfilePage() {
           <CompanyInfo companyData={companyData} />
         </section>
         <div className={styles.statusWrapper}>
-          <StatusBox icon={<Briefcase />} title='등록한 채용공고' number={12} />
-          <StatusBox icon={<Clock />} title='진행중인 채용' number={5} />
+          <StatusBox
+            icon={<Briefcase />}
+            iconColor='var(--color-purple-600)'
+            title='등록한 채용공고'
+            number={12}
+          />
+          <StatusBox
+            icon={<Clock />}
+            iconColor='var(--color-green-600)'
+            title='진행중인 채용'
+            number={5}
+          />
         </div>
       </main>
     </div>

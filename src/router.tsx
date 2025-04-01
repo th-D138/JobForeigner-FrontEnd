@@ -14,7 +14,10 @@ import {
   userSidebarNavItems,
 } from './lib/constants/navItems';
 
+// 메인 페이지랑 관련된 페이지들
 const MainPage = lazy(() => import('./pages/main/Page'));
+
+// 유저용 프로필이랑 관련된 페이지들
 const ProfilePage = lazy(() => import('./pages/profile/Page'));
 const ResumeListPage = lazy(() => import('./pages/profile/resume/Page'));
 const CreateResumePage = lazy(
@@ -23,10 +26,16 @@ const CreateResumePage = lazy(
 const ApplicationsPage = lazy(
   () => import('./pages/profile/applications/Page'),
 );
+
+// 기업용 프로필이랑 관련된 페이지들
 const CompanyProfilePage = lazy(() => import('./pages/profile/company/Page'));
 const CompanyProfileEditPage = lazy(
   () => import('./pages/profile/company/edit/Page'),
 );
+const CompanyProfileRecruitmentPage = lazy(
+  () => import('./pages/profile/company/recruitment/Page'),
+);
+
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
 const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
@@ -35,19 +44,28 @@ const RegisterPage = lazy(() => import('./pages/register/Page'));
 const LoginPage = lazy(() => import('./pages/login/Page'));
 
 // 각 페이지를 Suspense가 적용된 HOC로 감싸기
+// 메인 페이지랑 관련된 페이지들
 const SuspensedMainPage = withSuspense(MainPage);
+
+// 유저용 프로필이랑 관련된 페이지들
 const SuspensedProfilePage = withSuspense(ProfilePage);
 const SuspensedResumeListPage = withSuspense(ResumeListPage);
 const SuspensedCreateResumePage = withSuspense(CreateResumePage);
+const SuspensedApplicationsPage = withSuspense(ApplicationsPage);
+
+// 기업용 프로필이랑 관련된 페이지들
 const SuspensedCompanyProfilePage = withSuspense(CompanyProfilePage);
 const SuspensedCompanyProfileEditPage = withSuspense(CompanyProfileEditPage);
+const SuspensedCompanyProfileRecruitmentPage = withSuspense(
+  CompanyProfileRecruitmentPage,
+);
+
 const SuspensedCommunityPage = withSuspense(CommunityPage);
 const SuspensedCompaniesPage = withSuspense(CompaniesPage);
 const SuspensedDetailCompanyPage = withSuspense(DetailCompanyPage);
 const SuspensedNotFoundPage = withSuspense(NotFoundPage);
 const SuspensedRegisterPage = withSuspense(RegisterPage);
 const SuspensedLoginPage = withSuspense(LoginPage);
-const SuspensedApplicationsPage = withSuspense(ApplicationsPage);
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -86,6 +104,10 @@ export const router = createBrowserRouter(
       >
         <Route index element={<SuspensedCompanyProfilePage />} />
         <Route path='edit' element={<SuspensedCompanyProfileEditPage />} />
+        <Route
+          path='recruitment'
+          element={<SuspensedCompanyProfileRecruitmentPage />}
+        />
       </Route>
 
       {/* Layout이 적용되지 않는 라우트 */}

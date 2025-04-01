@@ -27,22 +27,4 @@
   justify-content: center;
   border-radius: 9999px;
   padding: 0.5rem;
-
-  &.all,
-  &.postingRecruitment {
-    background-color: var(--color-purple-50);
-    color: var(--color-purple-600);
-  }
-
-  &.reviewing {
-    background-color: var(--color-blue-50);
-    color: var(--color-blue-600);
-  }
-
-  &.interview,
-  &.accepted,
-  &.ongoingRecruitment {
-    background-color: var(--color-green-50);
-    color: var(--color-green-600);
-  }
 }
