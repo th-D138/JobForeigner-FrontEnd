@@ -1,3 +1,4 @@
+import Button from '../common/button/Button';
 import styles from './detailinfobox.module.scss';
 import { RecruitInfoType } from './RecruitBar';
 import {
@@ -57,9 +58,9 @@ const DetailInfoBox = ({
       </div>
 
       <div className={styles.buttons}>
-        <div>관심기업 등록</div>
-        <div>리뷰 보기</div>
-        <div>스크랩하기</div>
+        <Button>관심기업 등록</Button>
+        <Button>리뷰 보기</Button>
+        <Button>스크랩하기</Button>
       </div>
     </div>
   );
