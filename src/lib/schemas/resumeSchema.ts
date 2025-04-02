@@ -1,23 +1,8 @@
 import { z } from 'zod';
+import { ERROR_MSG } from './error';
+import { REGEX } from './regex';
 
-const REGEX = {
-  phoneNumber: /^\d{2,3}-\d{3,4}-\d{4}$/,
-};
-
-const ERROR_MSG = {
-  required: '필수 입력 항목입니다.',
-  numberRequired: '1 이상의 숫자를 입력해주세요.',
-  exceed: {
-    ten: '10자 이내로 입력해주세요.',
-    thirty: '30자 이내로 입력해주세요.',
-    fifty: '50자 이내로 입력해주세요.',
-    hundred: '100자 이내로 입력해주세요.',
-    thousand: '1000자 이내로 입력해주세요.',
-    twoThousand: '2000자 이내로 입력해주세요.',
-    fiveThousand: '5000자 이내로 입력해주세요.',
-  },
-  phoneNumber: '올바른 전화번호를 입력해주세요.',
-};
+const maxPhotoSize = 50 * 1024 * 1024;
 
 export const resumeSchema = z.object({
   title: z.string().min(1, ERROR_MSG.required).max(50, ERROR_MSG.exceed.fifty),
@@ -27,7 +12,16 @@ export const resumeSchema = z.object({
     .string()
     .min(1, ERROR_MSG.required)
     .regex(REGEX.phoneNumber, ERROR_MSG.phoneNumber),
-  photo: z.instanceof(File).optional().nullable(),
+  photo: z
+    .instanceof(File)
+    .optional()
+    .nullable()
+    .refine(file => {
+      if (!file) {
+        return true;
+      }
+      return file.size <= maxPhotoSize;
+    }),
   sido: z.string().min(1, ERROR_MSG.required),
   sigungu: z.string().min(1, ERROR_MSG.required),
   job: z.string().min(1, ERROR_MSG.required),

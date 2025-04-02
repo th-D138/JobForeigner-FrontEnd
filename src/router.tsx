@@ -9,10 +9,24 @@ import Layout from './components/layout/Layout';
 // 만든 HOC 임포트
 import withSuspense from '@/pages/withSuspense';
 import LayoutWithSidebar from './components/layout/LayoutWithSidebar';
+import {
+  companySidebarNavItems,
+  userSidebarNavItems,
+} from './lib/constants/navItems';
 
 const MainPage = lazy(() => import('./pages/main/Page'));
 const ProfilePage = lazy(() => import('./pages/profile/Page'));
-const CreateResumePage = lazy(() => import('./pages/profile/resume/Page'));
+const ResumeListPage = lazy(() => import('./pages/profile/resume/Page'));
+const CreateResumePage = lazy(
+  () => import('./pages/profile/resume/create/Page'),
+);
+const ApplicationsPage = lazy(
+  () => import('./pages/profile/applications/Page'),
+);
+const CompanyProfilePage = lazy(() => import('./pages/profile/company/Page'));
+const CompanyProfileEditPage = lazy(
+  () => import('./pages/profile/company/edit/Page'),
+);
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
 const RecruitPage = lazy(() => import('./pages/jobs/Page'));
@@ -22,11 +36,16 @@ const SelectResumePage = lazy(() => import('./pages/jobs/SelectResume'));
 const ApplySucessedPage = lazy(() => import('./pages/jobs/ApplySucessed'));
 const ApplyFailedPage = lazy(() => import('./pages/jobs/ApplyFailed'));
 const NotFoundPage = lazy(() => import('./pages/notFound/Page'));
+const RegisterPage = lazy(() => import('./pages/register/Page'));
+const LoginPage = lazy(() => import('./pages/login/Page'));
 
 // 각 페이지를 Suspense가 적용된 HOC로 감싸기
 const SuspensedMainPage = withSuspense(MainPage);
 const SuspensedProfilePage = withSuspense(ProfilePage);
+const SuspensedResumeListPage = withSuspense(ResumeListPage);
 const SuspensedCreateResumePage = withSuspense(CreateResumePage);
+const SuspensedCompanyProfilePage = withSuspense(CompanyProfilePage);
+const SuspensedCompanyProfileEditPage = withSuspense(CompanyProfileEditPage);
 const SuspensedCommunityPage = withSuspense(CommunityPage);
 const SuspensedCompaniesPage = withSuspense(CompaniesPage);
 const SuspensedRecruitPage = withSuspense(RecruitPage);
@@ -36,6 +55,9 @@ const SuspensedSelectResumePage = withSuspense(SelectResumePage);
 const SuspensedApplySucessedPage = withSuspense(ApplySucessedPage);
 const SuspensedApplyFailPage = withSuspense(ApplyFailedPage);
 const SuspensedNotFoundPage = withSuspense(NotFoundPage);
+const SuspensedRegisterPage = withSuspense(RegisterPage);
+const SuspensedLoginPage = withSuspense(LoginPage);
+const SuspensedApplicationsPage = withSuspense(ApplicationsPage);
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
@@ -51,12 +73,34 @@ export const router = createBrowserRouter(
         <Route path='select-resume' element={<SuspensedSelectResumePage />} />
         <Route path='apply-sucess' element={<SuspensedApplySucessedPage />} />
         <Route path='apply-fail' element={<SuspensedApplyFailPage />} />
+        <Route path='register' element={<SuspensedRegisterPage />} />
+        <Route path='login' element={<SuspensedLoginPage />} />
       </Route>
 
-      {/* Sidebar가 포함된 라우트 */}
-      <Route path='/' element={<LayoutWithSidebar />}>
+      {/* 유저 프로필 관련 라우트 */}
+      <Route
+        path='/'
+        element={<LayoutWithSidebar navItems={userSidebarNavItems} />}
+      >
         <Route path='profile' element={<SuspensedProfilePage />} />
-        <Route path='/profile/resume' element={<SuspensedCreateResumePage />} />
+        <Route path='profile/resume' element={<SuspensedResumeListPage />} />
+        <Route
+          path='/profile/resume/create'
+          element={<SuspensedCreateResumePage />}
+        />
+        <Route
+          path='profile/applications'
+          element={<SuspensedApplicationsPage />}
+        />
+      </Route>
+
+      {/* 기업 프로필 관련 라우트 */}
+      <Route
+        path='/profile/company'
+        element={<LayoutWithSidebar navItems={companySidebarNavItems} />}
+      >
+        <Route index element={<SuspensedCompanyProfilePage />} />
+        <Route path='edit' element={<SuspensedCompanyProfileEditPage />} />
       </Route>
 
       {/* Layout이 적용되지 않는 라우트 */}

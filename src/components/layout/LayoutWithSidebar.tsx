@@ -6,13 +6,24 @@ import Sidebar from '../common/sidebar/Sidebar';
 
 import styles from './layoutWithSidebar.module.scss';
 
-export default function LayoutWithSidebar() {
+interface Props {
+  navItems: {
+    name: string;
+    icon: React.ReactNode;
+    items: {
+      name: string;
+      href: string;
+    }[];
+  }[];
+}
+
+export default function LayoutWithSidebar({ navItems }: Props) {
   return (
     <RootErrorBoundary>
       <Header />
       <div className={styles.container}>
         <div className={styles.sidebar}>
-          <Sidebar />
+          <Sidebar navigation={navItems} />
         </div>
         <Outlet />
       </div>
