@@ -27,7 +27,7 @@ const dummyResume: ResumeProps[] = [
 type IdType = number | null;
 
 const SelectResume = () => {
-  const [selected, setSelected] = useState<number | null>(null);
+  const [selected, setSelected] = useState<IdType>(null);
   const navigator = useNavigate();
 
   const handleSelected = (id: IdType) => {
