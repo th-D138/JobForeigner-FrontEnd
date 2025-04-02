@@ -1,0 +1,34 @@
+.container {
+  margin: 1rem;
+  padding: 2rem;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  background-color: var(--color-yellow-100);
+  .img {
+    width: 4rem;
+    height: auto;
+
+    img {
+      width: 100%;
+      height: auto;
+    }
+  }
+}
+
+.title {
+  font-size: 1.8em;
+  font-weight: bold;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.description {
+  color: var(--color-gray-500);
+}
