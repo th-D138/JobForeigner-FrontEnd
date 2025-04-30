@@ -2,14 +2,80 @@ import {
   Briefcase,
   Building2,
   Calendar,
+  CheckCircle2,
+  Clock,
   Download,
   Eye,
   Mail,
   Phone,
+  XCircle,
 } from 'lucide-react';
 import styles from './applicationCard.module.scss';
 import Button from '@/components/common/button/Button';
 import { Link } from 'react-router-dom';
+
+const StatusTag = (status: string) => {
+  const getIcon = (status: string) => {
+    if (status === 'reviewing') {
+      return <Clock />;
+    }
+    if (status === 'interview') {
+      return <Calendar />;
+    }
+    if (status === 'rejected') {
+      return <XCircle />;
+    }
+    if (status === 'accepted') {
+      return <CheckCircle2 />;
+    }
+    return null;
+  };
+
+  const parseStatus = (status: string) => {
+    if (status === 'reviewing') {
+      return '검토중';
+    }
+    if (status === 'interview') {
+      return '면접 예정';
+    }
+    if (status === 'rejected') {
+      return '불합격';
+    }
+    if (status === 'accepted') {
+      return '합격';
+    }
+    return status;
+  };
+
+  const getColor = (status: string) => {
+    if (status === 'reviewing') {
+      return 'var(--color-blue-800)';
+    }
+    if (status === 'interview') {
+      return 'var(--color-green-800)';
+    }
+    if (status === 'rejected') {
+      return 'var(--color-red-800)';
+    }
+    if (status === 'accepted') {
+      return 'var(--color-green-800)';
+    }
+    return '';
+  };
+
+  return (
+    <div
+      className={styles.statusTag}
+      style={{
+        color: getColor(status),
+        backgroundColor: getColor(status).replace('800', '100'),
+      }}
+    >
+      {getIcon(status)}
+      {parseStatus(status)}
+    </div>
+  );
+};
 
 interface Props {
   application: {
@@ -78,7 +144,10 @@ export default function ApplicationCard({ application }: Props) {
           </div>
         </div>
         <div className={styles.profileInfo}>
-          <div className={styles.name}>{application.applicant.name}</div>
+          <div className={styles.name}>
+            {application.applicant.name}
+            {StatusTag(application.status)}
+          </div>
           <div className={styles.resume}>{application.resumeTitle}</div>
           <div className={styles.applicationInfo}>
             <span>
