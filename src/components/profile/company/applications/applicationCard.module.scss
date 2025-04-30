@@ -1,0 +1,128 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  padding: 1.5rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.title {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.recruitmentTitle {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+
+  > span {
+    border-radius: 9999px;
+    padding: 0.25rem 0.5rem;
+    background-color: var(--color-purple-50);
+    color: var(--color-purple-800);
+    border: 1px solid var(--color-purple-200);
+
+    font-size: 1rem;
+  }
+
+  > h3 {
+    font-size: 1.25rem;
+  }
+}
+
+.subTitle {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  color: var(--color-gray-500);
+
+  > span {
+    display: flex;
+    align-items: center;
+    gap: 0.25rem;
+
+    svg {
+      width: 1.25rem;
+      height: 1.25rem;
+    }
+  }
+}
+
+.content {
+  display: flex;
+  border-top: 1px solid var(--color-gray-100);
+  border-bottom: 1px solid var(--color-gray-100);
+  padding: 0.75rem 0;
+}
+
+.profileImage {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 1rem;
+
+  .imageWrapper {
+    border-radius: 50%;
+    overflow: hidden;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+.profileInfo {
+  padding: 1rem 0.5rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .name {
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: var(--color-gray-900);
+  }
+
+  .resume {
+    font-size: 1rem;
+    color: var(--color-gray-600);
+  }
+
+  .applicationInfo {
+    display: flex;
+    gap: 1.5rem;
+
+    > span {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      color: var(--color-gray-500);
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+
+  span {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+}
