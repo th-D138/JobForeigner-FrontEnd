@@ -35,6 +35,9 @@ const CompanyProfileEditPage = lazy(
 const CompanyProfileRecruitmentPage = lazy(
   () => import('./pages/profile/company/recruitment/Page'),
 );
+const CompanyProfileApplicationsPage = lazy(
+  () => import('./pages/profile/company/applications/Page'),
+);
 
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
@@ -63,6 +66,9 @@ const SuspensedCompanyProfilePage = withSuspense(CompanyProfilePage);
 const SuspensedCompanyProfileEditPage = withSuspense(CompanyProfileEditPage);
 const SuspensedCompanyProfileRecruitmentPage = withSuspense(
   CompanyProfileRecruitmentPage,
+);
+const SuspensedCompanyProfileApplicationsPage = withSuspense(
+  CompanyProfileApplicationsPage,
 );
 
 const SuspensedCommunityPage = withSuspense(CommunityPage);
@@ -122,6 +128,10 @@ export const router = createBrowserRouter(
         <Route
           path='recruitment'
           element={<SuspensedCompanyProfileRecruitmentPage />}
+        />
+        <Route
+          path='applications'
+          element={<SuspensedCompanyProfileApplicationsPage />}
         />
       </Route>
 
