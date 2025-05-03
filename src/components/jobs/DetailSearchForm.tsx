@@ -1,3 +1,4 @@
+import Input from '../common/input/Input';
 import Select from '../common/select/Select';
 import styles from './detailSearchForm.module.scss';
 
@@ -41,6 +42,7 @@ export default function DetailSearchForm() {
   return (
     <form className={styles.searchBox}>
       <div className={styles.searchBoxRow}>
+        <Input icon='search' placeholder='기업명을 입력하세요.' />
         <Select name='region' icon='map-pin' options={selectRegionOptions} />
         <Select name='region' icon='map-pin' options={selectJobOptions} />
         <button type='submit' className={styles.searchButton}>

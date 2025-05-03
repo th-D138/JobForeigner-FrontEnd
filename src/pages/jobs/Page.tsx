@@ -6,7 +6,6 @@ import styles from './Page.module.scss';
 const Page = () => {
   return (
     <div className={styles.container}>
-      <SearchBar />
       <DetailSearchForm />
       <RecruitBox />
     </div>
