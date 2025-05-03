@@ -1,12 +1,13 @@
-import DetailSearchForm from '@/components/jobs/DetailSearchForm';
-import RecruitBox from '@/components/jobs/RecruitsBox';
-import SearchBar from '@/components/companies/SearchBar';
+import SearchFilterBar from '@/components/companies/SearchFilterBar';
 import styles from './Page.module.scss';
+import SearchBar from '@/components/companies/SearchBar';
+import RecruitBox from '@/components/jobs/RecruitsBox';
 
 const Page = () => {
   return (
     <div className={styles.container}>
-      <DetailSearchForm />
+      <SearchBar />
+      <SearchFilterBar />
       <RecruitBox />
     </div>
   );

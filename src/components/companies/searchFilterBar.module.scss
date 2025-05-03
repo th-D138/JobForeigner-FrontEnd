@@ -1,0 +1,54 @@
+.searchFilterBarSection {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.filterBarContainer {
+	background-color: var(--color-gray-50);
+	width: 50rem;
+	padding: 1rem;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	border-radius: 8px;
+}
+
+.fillterTitle {
+	font-size: 1.2em;
+	font-weight: bold;
+}
+
+.filterByRegion {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	button {
+		display: flex;
+		width: 25rem;
+		justify-content: space-between;
+		align-items: center;
+		background-color: white;
+		padding: 0.4rem 2.2rem;
+		border: 1px solid var(--color-gray-400);
+	}
+}
+
+.filterByJobType {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 1rem;
+	button {
+		display: flex;
+		width: 25rem;
+		justify-content: space-between;
+		align-items: center;
+		background-color: white;
+		padding: 0.4rem 2.2rem;
+		border: 1px solid var(--color-gray-400);
+	}
+}
