@@ -4,7 +4,7 @@ import { ChevronRight } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
 
 export default function Banner() {
-  const { t } = useTranslation('common');
+  const { t } = useTranslation('mainPage');
 
   return (
     <section className={styles.heroSection}>
