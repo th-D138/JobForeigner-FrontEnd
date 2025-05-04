@@ -13,6 +13,7 @@ import {
 import styles from './applicationCard.module.scss';
 import Button from '@/components/common/button/Button';
 import { Link } from 'react-router-dom';
+import { CompanyApplicationCard } from '@/lib/type/company/company';
 
 const StatusTag = (status: string) => {
   const getIcon = (status: string) => {
@@ -78,27 +79,7 @@ const StatusTag = (status: string) => {
 };
 
 interface Props {
-  application: {
-    id: number;
-    jobId: number;
-    jobTitle: string;
-    jobInfo: {
-      position: string;
-      department: string;
-      employmentType: string;
-      expiresAt: string;
-    };
-    applicant: {
-      name: string;
-      photo: string;
-      email: string;
-      phone: string;
-    };
-    resumeTitle: string;
-    appliedAt: string;
-    status: string;
-    interviewDate?: string | null;
-  };
+  application: CompanyApplicationCard;
 }
 
 export default function ApplicationCard({ application }: Props) {

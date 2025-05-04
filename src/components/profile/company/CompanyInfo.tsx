@@ -9,22 +9,10 @@ import {
   User,
 } from 'lucide-react';
 import styles from './companyInfo.module.scss';
+import { CompanyProfileInfo } from '@/lib/type/company/company';
 
 interface Props {
-  companyData: {
-    name: string;
-    logo: string;
-    ceo: string;
-    businessNumber: string;
-    address: string;
-    phone: string;
-    email: string;
-    website: string;
-    industry: string;
-    foundedYear: string;
-    employeeCount: string;
-    description: string;
-  };
+  companyData: CompanyProfileInfo;
 }
 
 export default function CompanyInfo({ companyData }: Props) {

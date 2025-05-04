@@ -1,14 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './recruitmentCategory.module.scss';
 import { Briefcase } from 'lucide-react';
+import { Category } from '@/lib/type/category';
 
 export interface Props {
-  category: {
-    id: number;
-    name: string;
-    count: number;
-    slug: string;
-  };
+  category: Category;
 }
 
 export default function RecruitmentCategory({ category }: Props) {
