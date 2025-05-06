@@ -51,7 +51,10 @@ export default function CompanyProfileRecruitmentPage() {
     <div className={styles.container}>
       <main className={styles.page}>
         <div className={styles.title}>
-          <h1>채용 공고 관리</h1>
+          <div>
+            <h1>채용 공고 관리</h1>
+            <p>등록한 채용 공고를 관리하고 새 공고를 작성할 수 있습니다.</p>
+          </div>
           <Link to='/write-recruitment'>
             <Button size='medium'>
               <span className={styles.buttonContent}>
