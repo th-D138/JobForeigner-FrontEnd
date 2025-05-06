@@ -13,6 +13,7 @@ import {
   companySidebarNavItems,
   userSidebarNavItems,
 } from './lib/constants/navItems';
+import { PATH } from './lib/constants/routes';
 
 // 메인 페이지랑 관련된 페이지들
 const MainPage = lazy(() => import('./pages/main/Page'));
@@ -95,64 +96,82 @@ export const router = createBrowserRouter(
   createRoutesFromElements(
     <>
       {/* Layout이 적용되는 라우트들 */}
-      <Route path='/' element={<Layout />}>
+      <Route path={PATH.INDEX} element={<Layout />}>
         <Route index element={<SuspensedMainPage />} />
-        <Route path='community' element={<SuspensedCommunityPage />} />
-        <Route path='companies' element={<SuspensedCompaniesPage />} />
-        <Route path='companies/:id' element={<SuspensedDetailCompanyPage />} />
-        <Route path='jobs' element={<SuspensedRecruitPage />} />
-        <Route path='jobs/:id' element={<SuspensedDetailRecuitPage />} />
-        <Route path='select-resume' element={<SuspensedSelectResumePage />} />
-        <Route path='apply-sucess' element={<SuspensedApplySucessedPage />} />
-        <Route path='apply-fail' element={<SuspensedApplyFailPage />} />
-        <Route path='register' element={<SuspensedRegisterPage />} />
-        <Route path='login' element={<SuspensedLoginPage />} />
+        <Route path={PATH.COMMUNITY} element={<SuspensedCommunityPage />} />
+        <Route path={PATH.COMPANIES} element={<SuspensedCompaniesPage />} />
+        <Route
+          path={PATH.COMPANIES_DETAIL}
+          element={<SuspensedDetailCompanyPage />}
+        />
+        <Route path={PATH.JOBS} element={<SuspensedRecruitPage />} />
+        <Route path={PATH.JOB_DETAIL} element={<SuspensedDetailRecuitPage />} />
+        <Route
+          path={PATH.SELECT_RESUME}
+          element={<SuspensedSelectResumePage />}
+        />
+        <Route
+          path={PATH.APPLY_SUCCESS}
+          element={<SuspensedApplySucessedPage />}
+        />
+        <Route path={PATH.APPLY_FAIL} element={<SuspensedApplyFailPage />} />
+        <Route path={PATH.REGISTER} element={<SuspensedRegisterPage />} />
+        <Route path={PATH.LOGIN} element={<SuspensedLoginPage />} />
       </Route>
 
       {/* 유저 프로필 관련 라우트 */}
       <Route
-        path='/'
+        path={PATH.INDEX}
         element={<LayoutWithSidebar navItems={userSidebarNavItems} />}
       >
-        <Route path='profile' element={<SuspensedProfilePage />} />
-        <Route path='profile/resume' element={<SuspensedResumeListPage />} />
+        <Route path={PATH.PROFILE} element={<SuspensedProfilePage />} />
         <Route
-          path='profile/resume/create'
+          path={PATH.PROFILE_RESUME}
+          element={<SuspensedResumeListPage />}
+        />
+        <Route
+          path={PATH.PROFILE_RESUME_CREATE}
           element={<SuspensedCreateResumePage />}
         />
         <Route
-          path='profile/applications'
+          path={PATH.PROFILE_APPLICATIONS}
           element={<SuspensedApplicationsPage />}
         />
         <Route
-          path='profile/liked-companies'
+          path={PATH.PROFILE_LIKED_COMPANIES}
           element={<SuspensedLikedCompaniesPage />}
         />
         <Route
-          path='profile/scraps'
+          path={PATH.PROFILE_SCRAPS}
           element={<SuspensedScrapRecruitmentsPage />}
         />
       </Route>
 
       {/* 기업 프로필 관련 라우트 */}
       <Route
-        path='/profile/company'
+        path={PATH.INDEX}
         element={<LayoutWithSidebar navItems={companySidebarNavItems} />}
       >
-        <Route index element={<SuspensedCompanyProfilePage />} />
-        <Route path='edit' element={<SuspensedCompanyProfileEditPage />} />
         <Route
-          path='recruitment'
+          path={PATH.PROFILE_COMPANY}
+          element={<SuspensedCompanyProfilePage />}
+        />
+        <Route
+          path={PATH.PROFILE_COMPANY_EDIT}
+          element={<SuspensedCompanyProfileEditPage />}
+        />
+        <Route
+          path={PATH.PROFILE_COMPANY_RECRUITMENT}
           element={<SuspensedCompanyProfileRecruitmentPage />}
         />
         <Route
-          path='applications'
+          path={PATH.PROFILE_COMPANY_APPLICATIONS}
           element={<SuspensedCompanyProfileApplicationsPage />}
         />
       </Route>
 
       {/* Layout이 적용되지 않는 라우트 */}
-      <Route path='*' element={<SuspensedNotFoundPage />} />
+      <Route path={PATH.NOT_FOUND} element={<SuspensedNotFoundPage />} />
     </>,
   ),
 );
