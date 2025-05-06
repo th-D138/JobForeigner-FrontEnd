@@ -26,6 +26,12 @@ const CreateResumePage = lazy(
 const ApplicationsPage = lazy(
   () => import('./pages/profile/applications/Page'),
 );
+const LikedCompaniesPage = lazy(
+  () => import('./pages/profile/bookmark/liked-companies/Page'),
+);
+const ScrapRecruitmentsPage = lazy(
+  () => import('./pages/profile/bookmark/scraps/Page'),
+);
 
 // 기업용 프로필이랑 관련된 페이지들
 const CompanyProfilePage = lazy(() => import('./pages/profile/company/Page'));
@@ -60,6 +66,8 @@ const SuspensedProfilePage = withSuspense(ProfilePage);
 const SuspensedResumeListPage = withSuspense(ResumeListPage);
 const SuspensedCreateResumePage = withSuspense(CreateResumePage);
 const SuspensedApplicationsPage = withSuspense(ApplicationsPage);
+const SuspensedLikedCompaniesPage = withSuspense(LikedCompaniesPage);
+const SuspensedScrapRecruitmentsPage = withSuspense(ScrapRecruitmentsPage);
 
 // 기업용 프로필이랑 관련된 페이지들
 const SuspensedCompanyProfilePage = withSuspense(CompanyProfilePage);
@@ -109,12 +117,20 @@ export const router = createBrowserRouter(
         <Route path='profile' element={<SuspensedProfilePage />} />
         <Route path='profile/resume' element={<SuspensedResumeListPage />} />
         <Route
-          path='/profile/resume/create'
+          path='profile/resume/create'
           element={<SuspensedCreateResumePage />}
         />
         <Route
           path='profile/applications'
           element={<SuspensedApplicationsPage />}
+        />
+        <Route
+          path='profile/liked-companies'
+          element={<SuspensedLikedCompaniesPage />}
+        />
+        <Route
+          path='profile/scraps'
+          element={<SuspensedScrapRecruitmentsPage />}
         />
       </Route>
 
