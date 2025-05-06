@@ -39,7 +39,7 @@ export const userSidebarNavItems = [
     icon: <BookMarked />,
     items: [
       { name: '관심 기업', href: '/profile/liked-companies' },
-      { name: '스크랩', href: '/profile/company/scraps' },
+      { name: '스크랩', href: '/profile/scraps' },
     ],
   },
 ];
