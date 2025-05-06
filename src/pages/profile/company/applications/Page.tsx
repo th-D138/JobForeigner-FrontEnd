@@ -2,6 +2,9 @@ import StatusBox from '@/components/common/statusBox/StatusBox';
 import styles from './page.module.scss';
 import { Calendar, CheckCircle2, Clock, FileText } from 'lucide-react';
 import ApplicationCard from '@/components/profile/company/applications/ApplicationCard';
+import Input from '@/components/common/input/Input';
+import Select from '@/components/common/select/Select';
+import { useState } from 'react';
 
 const jobs = [
   {
@@ -131,11 +134,16 @@ const applications = [
 ];
 
 export default function CompanyProfileApplicationsPage() {
+  const [searchApplication, setSearchApplication] = useState('');
+
   return (
     <div className={styles.container}>
       <main className={styles.page}>
         <div className={styles.title}>
           <h1>지원서 관리</h1>
+          <p>
+            채용 공고에 지원한 지원자들의 이력서를 확인하고 관리할 수 있습니다.
+          </p>
         </div>
         <div className={styles.statusWrapper}>
           <StatusBox
@@ -176,6 +184,39 @@ export default function CompanyProfileApplicationsPage() {
             icon={<CheckCircle2 />}
             iconColor='var(--color-green-600)'
           />
+        </div>
+        <div className={styles.filterBox}>
+          <div className={styles.filterRow}>
+            <div className={styles.searchWrapper}>
+              <Input
+                icon='search'
+                placeholder='지원서 제목 검색'
+                value={searchApplication}
+                onChange={e => setSearchApplication(e.target.value)}
+              />
+            </div>
+            <div className={styles.selects}>
+              <Select
+                options={[
+                  { value: 'all', label: '전체' },
+                  { value: 'reviewing', label: '검토중' },
+                  { value: 'interview', label: '면접 예정' },
+                  { value: 'rejected', label: '불합격' },
+                  { value: 'accepted', label: '합격' },
+                ]}
+                defaultValue='all'
+                name='status'
+              />
+              <Select
+                options={[
+                  { value: 'newest', label: '최신순' },
+                  { value: 'oldest', label: '오래된순' },
+                ]}
+                defaultValue='newest'
+                name='sort'
+              />
+            </div>
+          </div>
         </div>
         <div className={styles.applications}>
           {applications.length > 0 ? (
