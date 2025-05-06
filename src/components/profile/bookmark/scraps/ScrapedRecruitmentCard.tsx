@@ -13,6 +13,7 @@ import {
   Trash2,
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Button from '@/components/common/button/Button';
 
 interface Props {
   job: Job;
@@ -78,11 +79,11 @@ export default function ScrapedRecruitmentCard({
             </div>
             <div className={styles.buttonGroup}>
               <Link to={`/jobs/${job.id}`}>
-                <button className={styles.outlineButton}>공고 상세보기</button>
+                <Button variant='outline'>공고 상세보기</Button>
               </Link>
               {job.status === 'active' && (
                 <Link to={`/jobs/${job.id}/apply`}>
-                  <button className={styles.button}>지원하기</button>
+                  <Button>지원하기</Button>
                 </Link>
               )}
             </div>

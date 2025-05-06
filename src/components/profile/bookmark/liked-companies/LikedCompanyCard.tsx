@@ -11,6 +11,7 @@ import {
 import styles from './likedCompanyCard.module.scss';
 import { Link } from 'react-router-dom';
 import { Company } from '@/lib/type/profile/bookmark';
+import Button from '@/components/common/button/Button';
 
 interface Props {
   company: Company;
@@ -59,12 +60,12 @@ export default function LikedCompanyCard({
             </div>
             <div className={styles.buttonGroup}>
               <Link to={`/companies/${company.id}`}>
-                <button className={styles.outlineButton}>기업 정보</button>
+                <Button variant='outline'>기업 정보</Button>
               </Link>
               <Link to={`/companies/${company.id}/jobs`}>
-                <button className={styles.outlineButton}>
+                <Button variant='outline'>
                   채용 공고 ({company.activeJobsCount})
-                </button>
+                </Button>
               </Link>
             </div>
           </div>
