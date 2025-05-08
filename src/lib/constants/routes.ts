@@ -5,6 +5,7 @@ export const PATH = {
   REGISTER: '/register',
 
   PROFILE: '/profile',
+  PROFILE_EDIT: '/profile/edit',
   PROFILE_RESUME: '/profile/resume',
   PROFILE_RESUME_CREATE: '/profile/resume/create',
   PROFILE_APPLICATIONS: '/profile/applications',

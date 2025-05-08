@@ -20,6 +20,7 @@ const MainPage = lazy(() => import('./pages/main/Page'));
 
 // 유저용 프로필이랑 관련된 페이지들
 const ProfilePage = lazy(() => import('./pages/profile/Page'));
+const UserProfileEditPage = lazy(() => import('./pages/profile/edit/Page'));
 const ResumeListPage = lazy(() => import('./pages/profile/resume/Page'));
 const CreateResumePage = lazy(
   () => import('./pages/profile/resume/create/Page'),
@@ -64,6 +65,7 @@ const SuspensedMainPage = withSuspense(MainPage);
 
 // 유저용 프로필이랑 관련된 페이지들
 const SuspensedProfilePage = withSuspense(ProfilePage);
+const SuspensedUserProfileEditPage = withSuspense(UserProfileEditPage);
 const SuspensedResumeListPage = withSuspense(ResumeListPage);
 const SuspensedCreateResumePage = withSuspense(CreateResumePage);
 const SuspensedApplicationsPage = withSuspense(ApplicationsPage);
@@ -125,6 +127,10 @@ export const router = createBrowserRouter(
         element={<LayoutWithSidebar navItems={userSidebarNavItems} />}
       >
         <Route path={PATH.PROFILE} element={<SuspensedProfilePage />} />
+        <Route
+          path={PATH.PROFILE_EDIT}
+          element={<SuspensedUserProfileEditPage />}
+        />
         <Route
           path={PATH.PROFILE_RESUME}
           element={<SuspensedResumeListPage />}
