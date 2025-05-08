@@ -4,6 +4,8 @@ import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { FormProvider, useForm } from 'react-hook-form';
 import UserProfileEditForm from '@/components/profile/edit/UserProfileEditForm';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { userProfileEditSchema } from '@/lib/schemas/userProfileEditSchema';
 
 const defaultValues = {
   phoneNumber: '010-1111-2222',
@@ -17,6 +19,7 @@ export default function ProfileEditPage() {
   const navigation = useNavigate();
   const formState = useForm({
     defaultValues,
+    resolver: zodResolver(userProfileEditSchema),
   });
 
   const onSubmit = async (data: unknown) => {
