@@ -4,6 +4,9 @@ import Button from '@/components/common/button/Button';
 import { Ban, Building2, Clock, Plus, Users } from 'lucide-react';
 import StatusBox from '@/components/common/statusBox/StatusBox';
 import RecruitmentCard from '@/components/profile/company/recruitment/RecruitmentCard';
+import Select from '@/components/common/select/Select';
+import Input from '@/components/common/input/Input';
+import { useState } from 'react';
 
 const recruitments = [
   {
@@ -42,11 +45,16 @@ const recruitments = [
 ];
 
 export default function CompanyProfileRecruitmentPage() {
+  const [searchRecruitment, setSearchRecruitment] = useState('');
+
   return (
     <div className={styles.container}>
       <main className={styles.page}>
         <div className={styles.title}>
-          <h1>채용 공고 관리</h1>
+          <div>
+            <h1>채용 공고 관리</h1>
+            <p>등록한 채용 공고를 관리하고 새 공고를 작성할 수 있습니다.</p>
+          </div>
           <Link to='/write-recruitment'>
             <Button size='medium'>
               <span className={styles.buttonContent}>
@@ -80,6 +88,37 @@ export default function CompanyProfileRecruitmentPage() {
             icon={<Users />}
             iconColor='var(--color-green-600)'
           />
+        </div>
+        <div className={styles.filterBox}>
+          <div className={styles.filterRow}>
+            <div className={styles.searchWrapper}>
+              <Input
+                icon='search'
+                placeholder='지원서 제목 검색'
+                value={searchRecruitment}
+                onChange={e => setSearchRecruitment(e.target.value)}
+              />
+            </div>
+            <div className={styles.selects}>
+              <Select
+                options={[
+                  { value: 'all', label: '전체' },
+                  { value: 'active', label: '진행중' },
+                  { value: 'expired', label: '마감' },
+                ]}
+                defaultValue='all'
+                name='status'
+              />
+              <Select
+                options={[
+                  { value: 'newest', label: '최신순' },
+                  { value: 'oldest', label: '오래된순' },
+                ]}
+                defaultValue='newest'
+                name='sort'
+              />
+            </div>
+          </div>
         </div>
         <div className={styles.recruitments}>
           {recruitments.length > 0 ? (
