@@ -1,17 +1,10 @@
 import React from 'react';
 import { Building2, Calendar, ArrowUpRight } from 'lucide-react';
 import styles from './applicationHistory.module.scss';
-
-interface Application {
-  id: number;
-  company: string;
-  position: string;
-  appliedAt: string;
-  status: string;
-}
+import { ApplicationHistoryType } from '@/lib/type/profile/application';
 
 interface ApplicationHistoryProps {
-  applications: Application[];
+  applications: ApplicationHistoryType[];
 }
 
 export function ApplicationHistory({ applications }: ApplicationHistoryProps) {
@@ -51,7 +44,7 @@ ApplicationHistory.List = function List({ children }: ListProps) {
 };
 
 type ItemProps = {
-  application: Application;
+  application: ApplicationHistoryType;
 };
 
 ApplicationHistory.Item = function Item({ application }: ItemProps) {

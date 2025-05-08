@@ -8,3 +8,11 @@ export type Application = {
   status: string;
   resumeTitle: string;
 };
+
+export type ApplicationHistoryType = {
+  id: number;
+  company: string;
+  position: string;
+  appliedAt: string;
+  status: string;
+};

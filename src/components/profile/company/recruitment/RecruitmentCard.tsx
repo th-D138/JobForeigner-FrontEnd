@@ -10,6 +10,7 @@ import {
 } from 'lucide-react';
 import styles from './recruitmentCard.module.scss';
 import Button from '@/components/common/button/Button';
+import { CompanyRecruitmentCard } from '@/lib/type/company/company';
 
 const StatusTag = ({ status }: { status: string }) => {
   const getIcon = (status: string) => {
@@ -57,17 +58,7 @@ const StatusTag = ({ status }: { status: string }) => {
 };
 
 interface Props {
-  recruitment: {
-    id: number;
-    title: string;
-    location: string;
-    employmentType: string;
-    createdAt: string;
-    expiresAt: string;
-    status: string;
-    applicantsCount: number;
-    viewCount: number;
-  };
+  recruitment: CompanyRecruitmentCard;
 }
 
 export default function RecruitmentCard({ recruitment }: Props) {
