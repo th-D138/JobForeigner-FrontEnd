@@ -49,7 +49,7 @@ export default function CompanyProfileEditPage() {
           >
             <span className={styles.buttonContent}>
               <ArrowLeft className={styles.buttonIcon} />
-              정보 수정
+              돌아가기
             </span>
           </Button>
         </div>
