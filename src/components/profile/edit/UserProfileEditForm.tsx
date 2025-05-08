@@ -60,12 +60,7 @@ export default function UserProfileEditForm() {
         required={true}
       />
       <div className={styles.twoRow}>
-        <InputField
-          control={control}
-          name='detailAddress'
-          label='상세주소'
-          required={true}
-        />
+        <InputField control={control} name='detailAddress' label='상세주소' />
         <InputField
           control={control}
           name='zipcode'
