@@ -49,6 +49,7 @@ export default function UserProfileEditForm() {
           control={control}
           name='phoneNumber'
           label='전화번호'
+          type='phone'
           required={true}
         />
       </div>
