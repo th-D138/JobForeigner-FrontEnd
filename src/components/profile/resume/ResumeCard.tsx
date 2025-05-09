@@ -10,6 +10,7 @@ import {
   Trash2,
 } from 'lucide-react';
 import Button from '@/components/common/button/Button';
+import { Link } from 'react-router-dom';
 
 interface Props {
   resume: Resume;
@@ -62,10 +63,12 @@ export default function ResumeCard({ resume }: Props) {
 
       {/* 하단 */}
       <div className={styles.cardFooter}>
-        <Button variant='outline' size='medium'>
-          <Eye className={styles.buttonIcon} />
-          미리보기
-        </Button>
+        <Link to={`/profile/resume/${resume.id}`}>
+          <Button variant='outline' size='medium'>
+            <Eye className={styles.buttonIcon} />
+            미리보기
+          </Button>
+        </Link>
         <Button variant='outline' size='medium'>
           <PenSquare className={styles.buttonIcon} />
           수정하기

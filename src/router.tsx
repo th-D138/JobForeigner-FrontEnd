@@ -25,6 +25,9 @@ const ResumeListPage = lazy(() => import('./pages/profile/resume/Page'));
 const CreateResumePage = lazy(
   () => import('./pages/profile/resume/create/Page'),
 );
+const ResumePreviewPage = lazy(
+  () => import('./pages/profile/resume/preview/detail/Page'),
+);
 const ApplicationsPage = lazy(
   () => import('./pages/profile/applications/Page'),
 );
@@ -68,6 +71,7 @@ const SuspensedProfilePage = withSuspense(ProfilePage);
 const SuspensedUserProfileEditPage = withSuspense(UserProfileEditPage);
 const SuspensedResumeListPage = withSuspense(ResumeListPage);
 const SuspensedCreateResumePage = withSuspense(CreateResumePage);
+const SuspensedResumePreviewPage = withSuspense(ResumePreviewPage);
 const SuspensedApplicationsPage = withSuspense(ApplicationsPage);
 const SuspensedLikedCompaniesPage = withSuspense(LikedCompaniesPage);
 const SuspensedScrapRecruitmentsPage = withSuspense(ScrapRecruitmentsPage);
@@ -138,6 +142,10 @@ export const router = createBrowserRouter(
         <Route
           path={PATH.PROFILE_RESUME_CREATE}
           element={<SuspensedCreateResumePage />}
+        />
+        <Route
+          path={PATH.PROFILE_RESUME_DETAIL}
+          element={<SuspensedResumePreviewPage />}
         />
         <Route
           path={PATH.PROFILE_APPLICATIONS}
