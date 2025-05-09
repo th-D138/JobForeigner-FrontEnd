@@ -1,0 +1,384 @@
+.container {
+  background-color: var(--color-gray-50);
+  flex: 1;
+  padding: 1rem 4rem;
+}
+
+.page {
+  min-width: 768px;
+  max-width: 1024px;
+  margin: 0 auto;
+  margin-top: 2rem;
+
+  & > * + * {
+    margin-top: 2rem;
+  }
+
+  section {
+    background-color: #fff;
+    border-radius: 0.5rem;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+    padding: 3rem;
+
+    .left {
+      h2 {
+        font-size: 1.375rem;
+        line-height: 1.75rem;
+        font-weight: 600;
+        color: var(--color-gray-900);
+        margin-bottom: 0.25rem;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5rem;
+        color: var(--color-gray-400);
+      }
+    }
+  }
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  .actionButtons {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.buttonContent {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1rem;
+
+  svg {
+    width: 1.25rem;
+    height: 1.25rem;
+  }
+}
+
+.previewArea {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  .left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.25rem;
+
+    h1 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--color-gray-900);
+    }
+  }
+}
+
+.badge {
+  background: var(--color-emerald-100);
+  color: var(--color-emerald-800);
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.sectionTitle {
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--color-gray-200);
+  padding-bottom: 0.5rem;
+
+  .titleIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    color: var(--color-violet-600);
+  }
+}
+
+.basicGrid {
+  display: flex;
+  gap: 2rem;
+
+  .photoWRapper {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 12px;
+    overflow: hidden;
+    background-color: var(--color-gray-200);
+  }
+
+  .placeholder {
+    width: 10rem;
+    height: 10rem;
+    background-color: var(--color-gray-200);
+    border-radius: 12px;
+  }
+
+  .photo {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.basicDetails {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  gap: 0.5rem;
+
+  .basicInfoColumn {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+
+    .basicInfoItem {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      .name {
+        flex: 2;
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: var(--color-gray-900);
+      }
+
+      .value {
+        flex: 4;
+        font-size: 1rem;
+        font-weight: 500;
+        color: var(--color-gray-500);
+      }
+    }
+  }
+}
+
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+
+  .skillItem {
+    background-color: var(--color-slate-200);
+    padding: 0.5rem 1rem;
+    border-radius: 9999px;
+    font-size: 1rem;
+    font-weight: 700;
+    color: var(--color-slate-700);
+  }
+}
+
+.experienceList,
+.educationList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .experienceItem,
+  .educationItem {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+    border-left: 2px solid var(--color-violet-200);
+    padding: 0.25rem 1rem;
+
+    .experienceHeader,
+    .educationHeader {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .experienceCompany,
+      .educationCompany {
+        font-size: 1.375rem;
+        font-weight: 600;
+        color: var(--color-gray-900);
+      }
+
+      .experiencePeriod,
+      .educationPeriod {
+        font-size: 1rem;
+        color: var(--color-gray-500);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+      }
+    }
+
+    .experiencePosition,
+    .educationPosition {
+      font-size: 1.25rem;
+      color: var(--color-violet-600);
+      margin-bottom: 1rem;
+    }
+
+    .experienceDescription,
+    .educationDescription {
+      font-size: 1.125rem;
+    }
+  }
+}
+
+.awardsList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  .awardItem {
+    background-color: var(--color-gray-50);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    .awardHeader {
+      display: flex;
+      justify-content: space-between;
+
+      .awardDetail {
+        display: flex;
+        flex-direction: column;
+        gap: 0.125rem;
+
+        .awardTitle {
+          font-size: 1.25rem;
+          color: var(--color-gray-900);
+        }
+
+        .awardOrganization {
+          font-size: 1rem;
+          color: var(--color-gray-500);
+        }
+      }
+
+      .awardDate {
+        font-size: 1rem;
+        color: var(--color-gray-500);
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        svg {
+          width: 1.25rem;
+          height: 1.25rem;
+        }
+      }
+    }
+
+    .awardDescription {
+      font-size: 1.125rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.certificationList {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(200px, 1fr));
+  gap: 1rem;
+
+  .certificateItem {
+    background-color: var(--color-gray-50);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    .certificateTitle {
+      font-size: 1.25rem;
+      color: var(--color-gray-900);
+    }
+
+    .certificateOrganization {
+      font-size: 1.125rem;
+      color: var(--color-gray-500);
+    }
+
+    .certificateDate {
+      font-size: 1rem;
+      color: var(--color-gray-500);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+      }
+    }
+
+    .certificateNumber {
+      font-size: 1rem;
+      color: var(--color-gray-500);
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .certificateDescription {
+      font-size: 1.125rem;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+.attachmentsList,
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1rem;
+
+  .attachmentsTitle,
+  .linksTitle {
+    font-size: 1.25rem;
+  }
+
+  .attachmentItem,
+  .linkItem {
+    background-color: var(--color-gray-50);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    display: flex;
+    flex-direction: column;
+
+    .attachmentLink,
+    .linkLink {
+      font-size: 1.125rem;
+      color: var(--color-violet-600);
+      display: flex;
+      gap: 0.25rem;
+      align-items: center;
+
+      svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        color: var(--color-gray-500);
+      }
+    }
+  }
+}
