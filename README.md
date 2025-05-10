@@ -26,6 +26,7 @@
 - [tanstack-query](https://tanstack.com/query/latest/docs/framework/react/installation): 요청 데이터 캐싱하는데 사용 ⇒ [핵심 정리](https://www.heropy.dev/p/HZaKIE)
 - [axios](https://www.heropy.dev/p/QOWqjV): http요청, 인터셉트를 사용하기 위함
 - [async-mutex](https://www.npmjs.com/package/async-mutex): 공유 리소스에 대한 액세스 동기화를 위한 모듈 여러 개의 비동기 콜백 함수가 경쟁 조건을 일으키는 상황 방지
+- [camelcase-keys](https://www.npmjs.com/package/camelcase-keys): object의 key를 카멜케이스로 변환해주는 라이브러리
 - [framer-motion](https://motion.dev/): 애니메이션 css적용하기에 편리함 (필수 X)
 - 지도는 아래 리스트 중에서 결정
   - google map api
@@ -77,6 +78,7 @@
      ```
 
   3. 최상위 컴포넌트에서 i18n 로드
+
      ```typescript
      // src/main.tsx
      import React from 'react';
@@ -92,7 +94,9 @@
        </React.StrictMode>,
      );
      ```
+
   4. 사용 예시
+
      ```typescript
      // src/App.tsx
      import React from 'react';
@@ -149,12 +153,14 @@
      - 이후 줄: 번역 키와 각 언어별 텍스트
 
   6. 변환 스크립트 작성
+
      - Node.js 환경에서 CSV를 파싱하기 위해 `csv-parser` 라이브러리 설치
        ```bash
         pnpm add -D csv-parser
         # Dev Dependency로 설치
        ```
      - 이후 `scripts/generateTranslations.js` 작성
+
        ```javascript
        import { fileURLToPath } from 'url';
        import { dirname, join } from 'path';
@@ -209,8 +215,10 @@
            }
          });
        ```
+
      - `translations[lang][translationKey] = row[lang]`를 통해 CSV의 해당 언어 텍스트를 JSON으로 매핑
      - 완료 후 `public/locales/<언어>/common.json`에 저장하면, `react-i18next`가 바로 읽을 수 있음
+
   7. Github Actions 워크플로우 작성 `.github/workflows/update-translations.yml`
 
      - `path` 옵션으로 `traslations/**`에 대한 변경 발생 시 트리거
