@@ -8,10 +8,12 @@ import axios, {
 import { Mutex } from 'async-mutex';
 import { API_URL, LOCAL_STORAGE } from './constants';
 import { refreshAccessToken } from './refreshAccessToken';
+import camelcaseKeys from 'camelcase-keys';
 
 // 기본 설정
 const defaultConfig: AxiosRequestConfig = {
   baseURL: API_URL,
+  transformResponse: [(data: any) => camelcaseKeys(data, { deep: true })],
   timeout: 30_000,
   headers: {
     'Content-Type': 'application/json',
@@ -108,6 +110,8 @@ export const fetcher = {
     resultify<T>(instance.post<T>(url, data, config)),
   put: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) =>
     resultify<T>(instance.put<T>(url, data, config)),
+  patch: <T>(url: string, data?: unknown, config?: AxiosRequestConfig) =>
+    resultify<T>(instance.patch<T>(url, data, config)),
   delete: <T>(url: string, config?: AxiosRequestConfig) =>
     resultify<T>(instance.delete<T>(url, config)),
 };
