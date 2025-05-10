@@ -3,6 +3,7 @@ import Select from '../common/select/Select';
 import styles from './detailSearchForm.module.scss';
 
 const selectRegionOptions = [
+  { value: 'all', label: '전체' },
   { value: 'seoul', label: '서울' },
   { value: 'busan', label: '부산' },
   { value: 'daegu', label: '대구' },
@@ -44,7 +45,7 @@ export default function DetailSearchForm() {
       <div className={styles.searchBoxRow}>
         <Input icon='search' placeholder='기업명을 입력하세요.' />
         <Select name='region' icon='map-pin' options={selectRegionOptions} />
-        <Select name='region' icon='map-pin' options={selectJobOptions} />
+        <Select name='job' icon='brief-case' options={selectJobOptions} />
         <button type='submit' className={styles.searchButton}>
           검색
         </button>

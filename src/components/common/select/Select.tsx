@@ -1,7 +1,8 @@
-import { useState, useRef, useEffect, forwardRef } from 'react';
-import styles from './select.module.scss';
-import { ChevronDown, MapPin, Search } from 'lucide-react';
+import { Briefcase, ChevronDown, MapPin, Search } from 'lucide-react';
+import { forwardRef, useEffect, useRef, useState } from 'react';
+
 import clsx from 'clsx';
+import styles from './select.module.scss';
 
 const getIcon = (icon?: string) => {
   switch (icon) {
@@ -9,6 +10,8 @@ const getIcon = (icon?: string) => {
       return <Search className={styles.icon} />;
     case 'map-pin':
       return <MapPin className={styles.icon} />;
+    case 'brief-case':
+      return <Briefcase className={styles.icon} />;
     default:
       return null;
   }
