@@ -14,7 +14,6 @@ import {
   userSidebarNavItems,
 } from './lib/constants/navItems';
 import { PATH } from './lib/constants/routes';
-import { QueryClientProvider } from './lib/QueryClientProvider';
 
 // 메인 페이지랑 관련된 페이지들
 const MainPage = lazy(() => import('./pages/main/Page'));
@@ -101,7 +100,7 @@ const SuspensedLoginPage = withSuspense(LoginPage);
 
 export const router = createBrowserRouter(
   createRoutesFromElements(
-    <QueryClientProvider>
+    <>
       {/* Layout이 적용되는 라우트들 */}
       <Route path={PATH.INDEX} element={<Layout />}>
         <Route index element={<SuspensedMainPage />} />
@@ -187,6 +186,6 @@ export const router = createBrowserRouter(
 
       {/* Layout이 적용되지 않는 라우트 */}
       <Route path={PATH.NOT_FOUND} element={<SuspensedNotFoundPage />} />
-    </QueryClientProvider>,
+    </>,
   ),
 );
