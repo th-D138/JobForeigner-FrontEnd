@@ -1,32 +1,25 @@
-import { useNavigate } from 'react-router-dom';
-import styles from './page.module.scss';
 import Button from '@/components/common/button/Button';
+import styles from './page.module.scss';
+import { useNavigate } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import { FormProvider, useForm } from 'react-hook-form';
-import CompanyProfileEditForm from '@/components/profile/company/edit/CompanyProfileEditForm';
+import UserProfileEditForm from '@/components/profile/edit/UserProfileEditForm';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { companyProfileEditSchema } from '@/lib/schemas/companyProfileEditSchema';
+import { userProfileEditSchema } from '@/lib/schemas/userProfileEditSchema';
 
 const defaultValues = {
-  logo: null,
-  company: '',
-  ceo: '',
-  businessNumber: '',
-  industry: '',
-  foundedYear: '',
-  employeeCount: '',
-  address: '',
-  phone: '',
-  email: '',
-  website: '',
-  description: '',
+  phoneNumber: '010-1111-2222',
+  email: 'new@example.com',
+  address: '서울특별시 성동구 성수이로 123',
+  detailAddress: '456호',
+  zipcode: '04790',
 };
 
-export default function CompanyProfileEditPage() {
+export default function ProfileEditPage() {
   const navigation = useNavigate();
   const formState = useForm({
     defaultValues,
-    resolver: zodResolver(companyProfileEditSchema),
+    resolver: zodResolver(userProfileEditSchema),
   });
 
   const onSubmit = async (data: unknown) => {
@@ -41,7 +34,7 @@ export default function CompanyProfileEditPage() {
     <div className={styles.container}>
       <main className={styles.page}>
         <div className={styles.title}>
-          <h1>기업 정보 수정</h1>
+          <h1>프로필 수정</h1>
           <Button
             variant='outline'
             size='medium'
@@ -55,10 +48,10 @@ export default function CompanyProfileEditPage() {
         </div>
         <section>
           <h2>기본 정보</h2>
-          <p>기업의 기본 정보를 수정할 수 있습니다.</p>
+          <p>프로필의 기본 정보를 수정할 수 있습니다.</p>
           <FormProvider {...formState}>
             <form onSubmit={formState.handleSubmit(onSubmit, onError)}>
-              <CompanyProfileEditForm />
+              <UserProfileEditForm />
             </form>
           </FormProvider>
         </section>
