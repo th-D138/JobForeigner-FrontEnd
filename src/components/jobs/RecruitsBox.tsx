@@ -1,5 +1,5 @@
 import RecruitBar from './RecruitBar';
-import styles from './recruitsbox.module.scss';
+import styles from './recruitsBox.module.scss';
 
 const recruitDummyData = [
   {
