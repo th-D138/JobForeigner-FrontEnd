@@ -1,5 +1,5 @@
 import Button from '../common/button/Button';
-import styles from './detailinfobox.module.scss';
+import styles from './detailInfoBox.module.scss';
 import { RecruitInfoType } from './RecruitBar';
 import {
   MapPin,
@@ -11,11 +11,9 @@ import {
 } from 'lucide-react';
 
 const DetailInfoBox = ({
-  id,
   title,
   company,
   location,
-  salary,
   date,
   rate,
   recruitType,
