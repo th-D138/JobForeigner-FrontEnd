@@ -68,10 +68,8 @@ const bookmarkedJobs: Job[] = [
 
 export default function BookmarkedJobsPage() {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [statusFilter, setStatusFilter] = useState<
-    'all' | 'active' | 'expired'
-  >('all');
-  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
+  const [statusFilter] = useState<'all' | 'active' | 'expired'>('all');
+  const [sortOrder] = useState<'newest' | 'oldest'>('newest');
 
   const filteredJobs = bookmarkedJobs
     .filter(
