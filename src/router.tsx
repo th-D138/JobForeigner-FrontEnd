@@ -53,10 +53,10 @@ const CompanyProfileApplicationsPage = lazy(
 const CommunityPage = lazy(() => import('./pages/community/Page'));
 const CompaniesPage = lazy(() => import('./pages/companies/Page'));
 const RecruitPage = lazy(() => import('./pages/jobs/Page'));
-const DetailRecuitPage = lazy(() => import('./pages/jobs/DetailPage'));
+const DetailRecruitPage = lazy(() => import('./pages/jobs/DetailPage'));
 const DetailCompanyPage = lazy(() => import('./pages/companies/DetailPage'));
 const SelectResumePage = lazy(() => import('./pages/jobs/SelectResume'));
-const ApplySucessedPage = lazy(() => import('./pages/jobs/ApplySucessed'));
+const ApplySuccessedPage = lazy(() => import('./pages/jobs/ApplySuccessed'));
 const ApplyFailedPage = lazy(() => import('./pages/jobs/ApplyFailed'));
 const NotFoundPage = lazy(() => import('./pages/notFound/Page'));
 const RegisterPage = lazy(() => import('./pages/register/Page'));
@@ -89,10 +89,10 @@ const SuspensedCompanyProfileApplicationsPage = withSuspense(
 const SuspensedCommunityPage = withSuspense(CommunityPage);
 const SuspensedCompaniesPage = withSuspense(CompaniesPage);
 const SuspensedRecruitPage = withSuspense(RecruitPage);
-const SuspensedDetailRecuitPage = withSuspense(DetailRecuitPage);
+const SuspensedDetailRecruitPage = withSuspense(DetailRecruitPage);
 const SuspensedDetailCompanyPage = withSuspense(DetailCompanyPage);
 const SuspensedSelectResumePage = withSuspense(SelectResumePage);
-const SuspensedApplySucessedPage = withSuspense(ApplySucessedPage);
+const SuspensedApplySuccessedPage = withSuspense(ApplySuccessedPage);
 const SuspensedApplyFailPage = withSuspense(ApplyFailedPage);
 const SuspensedNotFoundPage = withSuspense(NotFoundPage);
 const SuspensedRegisterPage = withSuspense(RegisterPage);
@@ -111,14 +111,17 @@ export const router = createBrowserRouter(
           element={<SuspensedDetailCompanyPage />}
         />
         <Route path={PATH.JOBS} element={<SuspensedRecruitPage />} />
-        <Route path={PATH.JOB_DETAIL} element={<SuspensedDetailRecuitPage />} />
+        <Route
+          path={PATH.JOB_DETAIL}
+          element={<SuspensedDetailRecruitPage />}
+        />
         <Route
           path={PATH.SELECT_RESUME}
           element={<SuspensedSelectResumePage />}
         />
         <Route
           path={PATH.APPLY_SUCCESS}
-          element={<SuspensedApplySucessedPage />}
+          element={<SuspensedApplySuccessedPage />}
         />
         <Route path={PATH.APPLY_FAIL} element={<SuspensedApplyFailPage />} />
         <Route path={PATH.REGISTER} element={<SuspensedRegisterPage />} />

@@ -1,8 +1,8 @@
 import { Link } from 'react-router-dom';
-import styles from './applySucessed.module.scss';
+import styles from './applySuccessed.module.scss';
 import { CircleCheckBig } from 'lucide-react';
 
-const ApplySucessed = () => {
+const ApplySuccessed = () => {
   return (
     <div className={styles.container}>
       <CircleCheckBig className={styles.checkIcon} />
@@ -19,4 +19,4 @@ const ApplySucessed = () => {
   );
 };
 
-export default ApplySucessed;
+export default ApplySuccessed;
