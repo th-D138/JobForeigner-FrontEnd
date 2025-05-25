@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import styles from './applysucess.module.scss';
+import styles from './applySucessed.module.scss';
 import { CircleCheckBig } from 'lucide-react';
 
 const ApplySucessed = () => {
