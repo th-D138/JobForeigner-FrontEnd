@@ -1,5 +1,4 @@
-import { title } from '@/lib/constants/serviceName';
-import styles from './recruitcontent.module.scss';
+import styles from './recruitContent.module.scss';
 import TextList from './TextList';
 
 const dummyData = [
