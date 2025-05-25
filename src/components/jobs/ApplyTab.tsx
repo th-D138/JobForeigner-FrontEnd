@@ -1,4 +1,4 @@
-import styles from './applytab.module.scss';
+import styles from './applyTab.module.scss';
 import { useNavigate } from 'react-router-dom';
 
 type ApplyProps = {
