@@ -68,7 +68,7 @@ const bookmarkedCompanies: Company[] = [
 
 export default function BookmarkedCompaniesPage() {
   const [searchTerm, setSearchTerm] = useState<string>('');
-  const [sortOrder, setSortOrder] = useState<'newest' | 'oldest'>('newest');
+  const [sortOrder] = useState<'newest' | 'oldest'>('newest');
 
   const filteredCompanies = bookmarkedCompanies
     .filter(

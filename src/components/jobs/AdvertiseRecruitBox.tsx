@@ -1,4 +1,4 @@
-import styles from './advertiserecruitbox.module.scss';
+import styles from './advertiseRecruitBox.module.scss';
 
 const AdvertiseRecruitBox = () => {
   return (

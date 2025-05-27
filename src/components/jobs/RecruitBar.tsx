@@ -1,4 +1,4 @@
-import styles from './recruitbar.module.scss';
+import styles from './recruitBar.module.scss';
 import { Link } from 'react-router-dom';
 import { useState } from 'react';
 import { Star } from 'lucide-react';

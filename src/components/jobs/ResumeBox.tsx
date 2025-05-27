@@ -1,4 +1,4 @@
-import styles from './resumebox.module.scss';
+import styles from './resumeBox.module.scss';
 import { Clock, FileUser } from 'lucide-react';
 
 export interface ResumeProps {

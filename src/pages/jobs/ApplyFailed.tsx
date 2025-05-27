@@ -1,4 +1,4 @@
-import styles from './applyfailed.module.scss';
+import styles from './applyFailed.module.scss';
 import { CircleX } from 'lucide-react';
 import { Link } from 'react-router-dom';
 

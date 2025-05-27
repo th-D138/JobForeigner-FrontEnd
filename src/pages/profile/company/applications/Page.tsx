@@ -6,25 +6,6 @@ import Input from '@/components/common/input/Input';
 import Select from '@/components/common/select/Select';
 import { useState } from 'react';
 
-const jobs = [
-  {
-    id: 1,
-    title: '프론트엔드 개발자 (React/Next.js)',
-  },
-  {
-    id: 2,
-    title: '백엔드 개발자 (Node.js)',
-  },
-  {
-    id: 3,
-    title: 'UI/UX 디자이너',
-  },
-  {
-    id: 4,
-    title: 'DevOps 엔지니어',
-  },
-];
-
 const applications = [
   {
     id: 1,

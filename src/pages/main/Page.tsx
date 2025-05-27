@@ -119,8 +119,43 @@ const featuredJobs = [
 ];
 
 export default function MainPage() {
+  // const {
+  //   data: getData,
+  //   error: getError,
+  //   isFetching: getIsFetching,
+  //   refetch: getRefresh,
+  // } = useGetTest();
+  // const {
+  //   mutate: postMutate,
+  //   error: postError,
+  //   isPending: postIsPending,
+  //   isError: postIsError,
+  // } = usePostTest();
+
   return (
     <main className={styles.page}>
+      {/* <button
+        onClick={() => {
+          console.log('data', getData);
+          console.log('error', getError);
+          console.log('isFetching', getIsFetching);
+          getRefresh();
+        }}
+      >
+        테스트 Get 버튼
+      </button>
+      <button
+        onClick={() => {
+          mutate({
+            title: '테스트 제목',
+            body: '테스트 본문',
+            userId: 1,
+          });
+        }}
+        disabled={postIsPending}
+      >
+        테스트 Post 버튼
+      </button> */}
       <Banner />
       <SearchSection />
       <PopularRecruitmentSection categories={categories} />

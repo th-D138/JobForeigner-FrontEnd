@@ -4,7 +4,7 @@ import { Building2, Users, MapPin, Globe } from 'lucide-react';
 type Props = {
   companyName: string;
   numOfEmployee: number;
-  companyAdress: string;
+  companyAddress: string;
   companyType: string;
   homepageUrl: string;
   description: string;
@@ -13,7 +13,7 @@ type Props = {
 
 const CompanyInfoPage = ({
   numOfEmployee,
-  companyAdress,
+  companyAddress,
   companyType,
   homepageUrl,
   description,
@@ -43,7 +43,7 @@ const CompanyInfoPage = ({
               <MapPin />
               <div className={styles.content}>
                 <span>주소</span>
-                <span>{companyAdress}</span>
+                <span>{companyAddress}</span>
               </div>
             </div>
             <div className={styles.homePage}>

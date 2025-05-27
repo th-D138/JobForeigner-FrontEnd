@@ -1,4 +1,4 @@
-import styles from './textlist.module.scss';
+import styles from './textList.module.scss';
 
 type TextProps = {
   title: string;
