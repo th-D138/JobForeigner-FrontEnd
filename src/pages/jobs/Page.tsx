@@ -1,6 +1,6 @@
 import DetailSearchForm from '@/components/jobs/DetailSearchForm';
 import RecruitBox from '@/components/jobs/RecruitsBox';
-import styles from './Page.module.scss';
+import styles from './page.module.scss';
 
 const Page = () => {
   return (
