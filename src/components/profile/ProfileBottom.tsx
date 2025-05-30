@@ -1,12 +1,5 @@
+import { ApplicationHistoryType } from '@/lib/type/profile/application';
 import styles from './profileBottom.module.scss';
-
-interface Application {
-  id: number;
-  company: string;
-  position: string;
-  appliedAt: string;
-  status: string;
-}
 
 interface Props {
   resumes: {
@@ -15,7 +8,7 @@ interface Props {
     createdAt: string;
     updatedAt: string;
   }[];
-  applications: Application[];
+  applications: ApplicationHistoryType[];
 }
 
 export default function ProfileBottom({ resumes, applications }: Props) {

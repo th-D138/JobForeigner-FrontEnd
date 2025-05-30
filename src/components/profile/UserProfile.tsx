@@ -1,29 +1,9 @@
+import { UserProfileInfo } from '@/lib/type/profile/info';
 import { ProfileImage, ProfileInfo, ProfileBottom } from '../profile';
 import styles from './userProfile.module.scss';
 
-interface Application {
-  id: number;
-  company: string;
-  position: string;
-  appliedAt: string;
-  status: string;
-}
-
 interface Props {
-  userInfo: {
-    name: string;
-    email: string;
-    phoneNumber: string;
-    region: string;
-    profileImageUrl?: string;
-    resumes: {
-      id: number;
-      title: string;
-      createdAt: string;
-      updatedAt: string;
-    }[];
-    applications: Application[];
-  };
+  userInfo: UserProfileInfo;
 }
 
 export default function UserProfile({ userInfo }: Props) {

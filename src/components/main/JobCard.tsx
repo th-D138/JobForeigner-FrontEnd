@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom';
 import styles from './jobCard.module.scss';
 import { MapPin } from 'lucide-react';
+import { JobCard as JobCardType } from '@/lib/type/job/job';
 
 export interface Props {
-  job: {
-    id: number;
-    title: string;
-    company: string;
-    companyLogo: string;
-    location: string;
-    isNew: boolean;
-    timeAgo: string;
-    tags: string[];
-  };
+  job: JobCardType;
 }
 
 export default function JobCard({ job }: Props) {
@@ -38,7 +30,7 @@ export default function JobCard({ job }: Props) {
           <span>{job.location}</span>
         </div>
         <div className={styles.tagsWrapper}>
-          {job.tags.map((tag) => (
+          {job.tags.map(tag => (
             <span key={`id-${tag}`} className={styles.jobTag}>
               {tag}
             </span>

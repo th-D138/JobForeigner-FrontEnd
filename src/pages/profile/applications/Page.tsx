@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import styles from './page.module.scss';
-import StatusBox from '@/components/profile/applications/StatusBox';
+import StatusBox from '@/components/common/statusBox/StatusBox';
 import { Application } from '@/lib/type/profile/application';
 import ApplicationsTabs from '@/components/profile/applications/ApplicationsTabs';
 import ApplicationInfo from '@/components/profile/applications/ApplicationInfo';
@@ -11,6 +11,8 @@ import {
   Clock,
   XCircle,
 } from 'lucide-react';
+import Input from '@/components/common/input/Input';
+import Select from '@/components/common/select/Select';
 
 function getIcon(title: string) {
   if (title === '전체 지원' || title === 'all') {
@@ -115,6 +117,7 @@ const applications: Application[] = [
 ];
 
 export default function ApplicationsPage() {
+  const [searchApplication, setSearchApplication] = useState('');
   const [selectedApplications, setSelectedApplications] = useState<{
     status: string;
     applications: Application[];
@@ -138,21 +141,25 @@ export default function ApplicationsPage() {
     {
       id: 1,
       title: '전체 지원',
+      color: 'var(--color-purple-600)',
       number: applications.length,
     },
     {
       id: 2,
       title: '서류 검토중',
+      color: 'var(--color-blue-600)',
       number: reviewing.length,
     },
     {
       id: 3,
       title: '면접 예정',
+      color: 'var(--color-green-600)',
       number: interviewing.length,
     },
     {
       id: 4,
       title: '완료',
+      color: 'var(--color-green-600)',
       number: accepted.length,
     },
   ];
@@ -168,11 +175,44 @@ export default function ApplicationsPage() {
           {statusBoxes.map(statusBox => (
             <StatusBox
               icon={getIcon(statusBox.title)}
+              iconColor={statusBox.color}
               key={statusBox.id}
               {...statusBox}
             />
           ))}
         </div>
+        <div className={styles.filterBox}>
+          <div className={styles.filterRow}>
+            <div className={styles.searchWrapper}>
+              <Input
+                icon='search'
+                placeholder='이력서 제목 검색'
+                value={searchApplication}
+                onChange={e => setSearchApplication(e.target.value)}
+              />
+            </div>
+            <div className={styles.selects}>
+              <Select
+                options={[
+                  { value: 'all', label: '전체' },
+                  { value: 'completed', label: '작성완료' },
+                  { value: 'progressing', label: '작성중' },
+                ]}
+                defaultValue='all'
+                name='status'
+              />
+              <Select
+                options={[
+                  { value: 'newest', label: '최신순' },
+                  { value: 'oldest', label: '오래된순' },
+                ]}
+                defaultValue='newest'
+                name='sort'
+              />
+            </div>
+          </div>
+        </div>
+
         <div className={styles.tabs}>
           <ApplicationsTabs
             applications={applications}
