@@ -10,7 +10,7 @@ import FourthSection from '@/components/register/FourthSection';
 import { FormProvider, useForm } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { registerSchema, RegisterValues } from '@/lib/schemas/registerSchema';
-import usePostForeignerSignup from '@/lib/apis/mutaions/usePoseForeignerSignup';
+import usePostForeignerSignup from '@/lib/apis/mutations/usePoseForeignerSignup';
 
 const defaultValues = {
   email: '',
